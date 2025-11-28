@@ -5,8 +5,8 @@ const basePath = isGitHubPages ? "/yohanux" : "";
 
 const nextConfig: NextConfig = {
   output: "export",
-  basePath: basePath,
-  assetPrefix: basePath,
+  basePath: "",
+  assetPrefix: "",
   images: {
     unoptimized: true,
   },
