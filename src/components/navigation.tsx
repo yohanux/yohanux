@@ -3,6 +3,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
+import { withBasePath } from "@/lib/path";
 
 const NAV_LINKS = ["post", "work", "resume", "blog", "about"];
 
@@ -14,7 +15,7 @@ export function Navigation() {
       <nav className="flex w-full items-center justify-between px-5 min-[810px]:px-[60px] min-[1200px]:px-20 py-[10px]">
         <Link href="/" className="flex items-center px-2 py-2 -mx-2 -my-2" aria-label="Navigate home">
           <Image
-            src="/assets/resource/logo.svg"
+            src={withBasePath("/assets/resource/logo.svg")}
             alt="Yohan Park logo"
             width={114}
             height={20}

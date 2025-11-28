@@ -2,6 +2,7 @@ import { notFound } from "next/navigation";
 import Link from "next/link";
 import Image from "next/image";
 import { getAllPosts, getPostBySlug } from "@/lib/blog";
+import { withBasePath } from "@/lib/path";
 
 interface PostPageProps {
   params: Promise<{
@@ -78,7 +79,7 @@ export default async function BlogPostPage({ params }: PostPageProps) {
 
       <div className="relative h-72 w-full overflow-hidden rounded-3xl border border-[var(--color-gray-100)] bg-[var(--color-gray-50)]">
         <Image
-          src={post.coverImage}
+          src={withBasePath(post.coverImage)}
           alt={post.title}
           fill
           className="object-cover"

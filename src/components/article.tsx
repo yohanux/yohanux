@@ -1,6 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import { PostMeta } from "@/lib/post";
+import { withBasePath } from "@/lib/path";
 
 interface ArticleProps {
   post: PostMeta;
@@ -13,7 +14,7 @@ export function Article({ post }: ArticleProps) {
         {post.coverImage && (
           <div className="relative w-full h-48 overflow-hidden rounded-2xl transition-transform duration-500 group-hover:scale-[0.95]">
             <Image
-              src={post.coverImage}
+              src={withBasePath(post.coverImage)}
               alt={post.title}
               fill
               className="object-cover transition-transform duration-500 group-hover:scale-120 rounded-2xl"
