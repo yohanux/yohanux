@@ -1,12 +1,19 @@
 import { notFound } from "next/navigation";
 import Link from "next/link";
 import Image from "next/image";
-import { getPostBySlug } from "@/lib/post";
+import { getAllPosts, getPostBySlug } from "@/lib/post";
 
 interface PostPageProps {
   params: Promise<{
     slug: string;
   }>;
+}
+
+export async function generateStaticParams() {
+  const posts = await getAllPosts();
+  return posts.map((post) => ({
+    slug: post.slug,
+  }));
 }
 
 function renderContent(content: string) {
