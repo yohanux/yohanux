@@ -1,19 +1,29 @@
 /**
  * Get the base path for GitHub Pages deployment
- * In production, this will be "/yohanux", otherwise empty string
+ * Returns empty string for custom domain, "/yohanux" only if explicitly on GitHub Pages subdomain
  */
 export function getBasePath(): string {
   if (typeof window !== "undefined") {
-    // Client-side: check if we're on GitHub Pages
+    // Client-side: check if we're on GitHub Pages subdomain (not custom domain)
+    const hostname = window.location.hostname;
     const pathname = window.location.pathname;
+    
+    // If using custom domain (not *.github.io), return empty string
+    if (!hostname.includes("github.io")) {
+      return "";
+    }
+    
+    // If on GitHub Pages subdomain and path starts with /yohanux, use it
     if (pathname.startsWith("/yohanux")) {
       return "/yohanux";
     }
+    
     return "";
   }
   
-  // Server-side: use environment variable
-  return process.env.GITHUB_PAGES === "true" || process.env.NODE_ENV === "production" ? "/yohanux" : "";
+  // Server-side: only use /yohanux if explicitly set via environment variable
+  // Custom domain deployments should not set GITHUB_PAGES=true
+  return process.env.GITHUB_PAGES === "true" ? "/yohanux" : "";
 }
 
 /**
