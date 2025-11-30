@@ -63,21 +63,14 @@ export default async function PostDetailPage({ params }: PostPageProps) {
     return notFound();
   }
 
-  return (
-    <article className="mx-auto flex w-full max-w-3xl flex-col gap-8 px-6 py-16">
-      <div className="space-y-4 text-center">
-        <p className="text-sm uppercase tracking-[0.4em] text-[var(--color-gray-500)]">{post.tags.join(" / ")}</p>
-        <h1 className="text-4xl font-[var(--font-weight-700)] text-[var(--color-gray-900)]">{post.title}</h1>
-        <p className="text-sm text-[var(--color-gray-500)]">
-          {new Date(post.publishedAt).toLocaleDateString("ko-KR", {
-            year: "numeric",
-            month: "long",
-            day: "numeric",
-          })}
-        </p>
-      </div>
+  // Article 상세페이지 요소 정의
+  const title = post.title; // 제목
+  const subtitle = post.description; // 소개글
+  const dateObj = new Date(post.publishedAt); // 날짜
 
-      <div className="relative h-72 w-full overflow-hidden rounded-3xl border border-[var(--color-gray-100)] bg-[var(--color-gray-50)]">
+  return (
+    <article className="mx-auto flex w-full max-w-3xl flex-col gap-8 px-6 pb-16">
+      <div className="relative h-72 w-full overflow-hidden border border-[var(--color-gray-100)] bg-[var(--color-gray-50)]">
         <Image
           src={withBasePath(post.coverImage)}
           alt={post.title}
@@ -86,6 +79,18 @@ export default async function PostDetailPage({ params }: PostPageProps) {
           sizes="(max-width: 768px) 100vw, 768px"
           priority
         />
+      </div>
+
+      <div className="space-y-4 text-left">
+        <h1 className="text-4xl font-[var(--font-weight-700)] text-[var(--color-gray-900)]">{title}</h1>
+        <p className="text-[16px] leading-[22px] font-[var(--font-weight-500)] text-[var(--color-gray-600)]">{subtitle}</p>
+        <p className="text-sm text-[var(--color-gray-500)]">
+          {dateObj.toLocaleDateString("ko-KR", {
+            year: "numeric",
+            month: "long",
+            day: "numeric",
+          })}
+        </p>
       </div>
 
       <div className="space-y-5">{renderContent(post.content)}</div>
