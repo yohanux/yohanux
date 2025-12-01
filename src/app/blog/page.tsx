@@ -17,7 +17,7 @@ export default async function BlogPage() {
   };
 
   return (
-    <main className="mx-auto flex w-full max-w-7xl flex-col gap-8 px-5 min-[810px]:px-[60px] min-[1200px]:px-20 py-16">
+    <main className="mx-auto flex w-full max-w-7xl flex-col gap-8 px-5 min-[810px]:px-[60px] min-[1200px]:px-20 py-16 animate-fade-in-up">
       <section 
         className="grid grid-cols-2 md:grid-cols-4 gap-4"
         style={{ 
