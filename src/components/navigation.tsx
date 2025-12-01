@@ -66,7 +66,7 @@ export function Navigation() {
   }, [isDetailPage]);
 
   return (
-    <header className="sticky top-0 z-50 w-full bg-white/80 backdrop-blur-[20px] relative">
+    <header className="sticky top-0 z-50 w-full bg-white/70 backdrop-blur-[20px] relative">
       <nav className="flex w-full items-center justify-between px-5 min-[810px]:px-[60px] min-[1200px]:px-20 py-[10px]">
         <Link 
           href="/" 
@@ -205,23 +205,25 @@ export function Navigation() {
           </ul>
         </div>
       </nav>
-      {/* 스크롤 프로그레스바 - 상세페이지에서만 표시, border 역할 */}
-      <div className="absolute bottom-0 left-0 w-full h-[2px] z-[60]">
-        {isDetailPage ? (
-          <>
+      {/* 스크롤 프로그레스바 - 상세페이지에서만 표시, border 역할, 메뉴가 열려있을 때는 숨김 */}
+      {!isMenuOpen && (
+        <div className="absolute bottom-0 left-0 w-full h-[2px] z-[60]">
+          {isDetailPage ? (
+            <>
+              <div className="absolute bottom-0 left-0 w-full h-[1px] bg-[var(--color-gray-200)]" />
+              <div
+                className="absolute bottom-0 left-0 h-[2px]"
+                style={{ 
+                  width: `${scrollProgress}%`,
+                  background: 'var(--color-progress-gradient)'
+                }}
+              />
+            </>
+          ) : (
             <div className="absolute bottom-0 left-0 w-full h-[1px] bg-[var(--color-gray-200)]" />
-            <div
-              className="absolute bottom-0 left-0 h-[2px]"
-              style={{ 
-                width: `${scrollProgress}%`,
-                background: 'var(--color-progress-gradient)'
-              }}
-            />
-          </>
-        ) : (
-          <div className="absolute bottom-0 left-0 w-full h-[1px] bg-[var(--color-gray-200)]" />
-        )}
-      </div>
+          )}
+        </div>
+      )}
     </header>
   );
 }

@@ -23,6 +23,26 @@ function renderContent(content: string) {
     .map((block) => block.trim())
     .filter(Boolean)
     .map((block, index) => {
+      // 이미지 마크다운 처리: ![alt text](image-path)
+      const imageRegex = /^!\[([^\]]*)\]\(([^)]+)\)$/;
+      const imageMatch = block.match(imageRegex);
+      if (imageMatch) {
+        const [, alt, imagePath] = imageMatch;
+        return (
+          <div key={`image-${index}`} className="w-full">
+            <div className="relative w-full aspect-video overflow-hidden">
+              <Image
+                src={withBasePath(imagePath)}
+                alt={alt || ""}
+                fill
+                className="object-contain"
+                sizes="(max-width: 768px) 100vw, 768px"
+              />
+            </div>
+          </div>
+        );
+      }
+
       if (block.startsWith("### ")) {
         return (
           <h3

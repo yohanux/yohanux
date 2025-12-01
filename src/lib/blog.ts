@@ -8,6 +8,7 @@ export interface BlogPostMeta {
   publishedAt: string;
   coverImage: string;
   tags: string[];
+  tileType?: "1:1" | "1:2" | "2:1"; // 갤러리 타일 비율 (선택사항)
 }
 
 export interface BlogPost extends BlogPostMeta {
@@ -82,6 +83,7 @@ async function loadPostFromFile(fileName: string): Promise<BlogPost> {
     publishedAt: (metadata.publishedAt as string) ?? new Date().toISOString(),
     coverImage: (metadata.coverImage as string) ?? "",
     tags: Array.isArray(metadata.tags) ? metadata.tags : [],
+    tileType: (metadata.tileType as "1:1" | "1:2" | "2:1") || undefined,
     content,
   };
 }

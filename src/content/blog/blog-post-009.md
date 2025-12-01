@@ -1,10 +1,11 @@
 ---
-slug: designing-with-constraints
+slug: blog-post-009
 title: "디자인 제약을 친구로 만드는 방법"
 description: "프로젝트 초기에 마주한 시스템 제약을 해결 과정 중심으로 정리했습니다."
 publishedAt: "2025-01-15"
-coverImage: "/assets/images/blog/designing-with-constraints.jpg"
+coverImage: "/assets/resource/thumbnail_02.webp"
 tags: [Case Study, Product, Research]
+tileType: "2:1"
 ---
 
 ### 문제 정의
