@@ -18,18 +18,6 @@ export default async function BlogPage() {
 
   return (
     <main className="mx-auto flex w-full max-w-7xl flex-col gap-8 px-5 min-[810px]:px-[60px] min-[1200px]:px-20 py-16">
-      <header className="space-y-3 text-center">
-        <p className="text-sm font-[var(--font-weight-600)] uppercase tracking-[0.4em] text-[var(--color-gray-500)]">
-          Blog
-        </p>
-        <h1 className="text-4xl font-[var(--font-weight-700)] text-[var(--color-gray-900)]">
-          생각과 과정을 기록하는 공간
-        </h1>
-        <p className="text-lg text-[var(--color-gray-600)]">
-          웹사이트 개편중입니다
-        </p>
-      </header>
-
       <section 
         className="grid grid-cols-2 md:grid-cols-4 gap-4"
         style={{ 
@@ -68,8 +56,12 @@ export default async function BlogPage() {
                   <h3 className="text-lg font-[var(--font-weight-700)] mb-1 line-clamp-2">
                     {post.title}
                   </h3>
-                  <p className="text-sm text-white/90 line-clamp-2">
-                    {post.description}
+                  <p className="text-sm text-white/90">
+                    {new Date(post.publishedAt).toLocaleDateString("ko-KR", {
+                      year: "numeric",
+                      month: "long",
+                      day: "numeric",
+                    })}
                   </p>
                 </div>
               </div>
