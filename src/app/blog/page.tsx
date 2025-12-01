@@ -14,7 +14,7 @@ export default async function BlogPage() {
           생각과 과정을 기록하는 공간
         </h1>
         <p className="text-lg text-[var(--color-gray-600)]">
-          프로젝트 회고, 디자인 노트, 제작 비하인드를 차곡차곡 쌓아갑니다.
+          웹사이트 개편중입니다
         </p>
       </header>
 
