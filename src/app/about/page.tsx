@@ -5,7 +5,7 @@ export default function AboutPage() {
         About
       </h1>
       <p className="mt-4 text-lg text-[var(--color-gray-600)]">
-        웹사이트 개편중입니다
+        ⚠️ 웹사이트 공사중입니다 ⚠️
       </p>
     </main>
   );
