@@ -3,9 +3,11 @@ slug: post-001
 title: "테오의 스프린트 17기 디자이너 참여 후기"
 description: "6일간의 여정과 협업"
 publishedAt: "2024-04-10"
-coverImage: "/assets/resource/thumbnail_02.webp"
+coverImage: "/assets/resource/thumbnail_001.webp"
 tags: [Example, Post]
 ---
+
+### ⚠️ 웹사이트 공사중
 
 2024.04.03 - 08 총 6일간 개발자들과 함께 아이디어 검증을 하는 테오의 스프린트에 참여했다.
 

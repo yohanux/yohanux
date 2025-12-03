@@ -3,9 +3,11 @@ slug: post-002
 title: "애플에 대한 첫인상"
 description: "시작은 아이팟 셔플로부터"
 publishedAt: "2024-10-04"
-coverImage: "/assets/resource/thumbnail_02.webp"
+coverImage: "/assets/resource/thumbnail_002.webp"
 tags: [Project, Development]
 ---
+
+### ⚠️ 웹사이트 공사중
 
 때는 2015년,
 입시를 앞두고 야간자율학습을 하던 고등학교 3학년 때의 일이다.

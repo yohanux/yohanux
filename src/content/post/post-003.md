@@ -3,9 +3,11 @@ slug: post-003
 title: "애플 인텔리전스 생성형 이미지 사용기"
 description: "AI를 대하는 애플의 관점"
 publishedAt: "2024-11-25"
-coverImage: "/assets/resource/thumbnail_02.webp"
+coverImage: "/assets/resource/thumbnail_003.avif"
 tags: [Design, System]
 ---
+
+### ⚠️ 웹사이트 공사중
 
 얼마 전 애플 인텔리전스의 이미지 생성 기능 대기열이 승인으로 바뀌었다.
 설레는 마음으로, 애플의 발표 때부터 기대했던 기능인 Playground와 Genmoji를 사용해 보았다.

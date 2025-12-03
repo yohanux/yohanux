@@ -3,9 +3,11 @@ slug: post-004
 title: "Framer x 29CM Seoul 밋업 참여 후기"
 description: "우리는 프레이머를 이렇게 활용합니다"
 publishedAt: "2024-11-28"
-coverImage: "/assets/resource/thumbnail_02.webp"
+coverImage: "/assets/resource/thumbnail_004.avif"
 tags: [Performance, Optimization]
 ---
+
+### ⚠️ 웹사이트 공사중
 
 https://lu.ma/k5mm0lp7?locale=ko
 최근 재미있게 사용하고 있는 프레이머에서 29CM와 함께 밋업을 주최한다는 소식을 접했다.

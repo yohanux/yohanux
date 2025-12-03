@@ -3,10 +3,11 @@ slug: post-005
 title: "눈에 띄는 토스의 그라디언트 사용법"
 description: "작지만 돋보이는 디자인 디테일들"
 publishedAt: "2025-01-13"
-coverImage: "/assets/resource/thumbnail_02.webp"
+coverImage: "/assets/resource/thumbnail_005.webp"
 tags: [Accessibility, Web]
 ---
 
+### ⚠️ 웹사이트 공사중
 
 최근 토스 메인화면에 변경점이 생겼다.
 계좌들을 보여주던 카드 그룹의 하단영역 더보기 버튼을 4개로 나누어 각각 해당하는 메뉴에 빠르게 진입할 수 있게되었다.

@@ -67,7 +67,7 @@ export function Navigation() {
 
   return (
     <header className="sticky top-0 z-50 w-full bg-white/70 backdrop-blur-[20px] relative">
-      <nav className="flex w-full items-center justify-between px-5 min-[810px]:px-[60px] min-[1200px]:px-20 py-[10px]">
+      <nav className="flex w-full max-w-7xl mx-auto items-center justify-between px-5 min-[810px]:px-[60px] min-[1200px]:px-20 py-[10px]">
         <Link 
           href="/" 
           className="flex items-center px-2 py-2 -mx-2 -my-2" 
