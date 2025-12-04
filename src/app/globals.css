@@ -14,8 +14,9 @@
   --gray-700: #4e5968;
   --gray-800: #333d4b;
   --gray-900: #191f28;
-  --primary: #FF501B;
+  --primary: #217cf9;
   --progress-gradient: linear-gradient(90deg, #00BBFF 0%, #0080FF 100%);
+  
   --font-pretendard: "Pretendard", -apple-system, BlinkMacSystemFont, "Segoe UI",
     system-ui, sans-serif;
   --font-weight-100: 100;
