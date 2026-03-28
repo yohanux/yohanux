@@ -1,1 +1,1 @@
-https://yohanux.github.io/yohanux/
+https://yohanux.com
