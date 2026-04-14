@@ -1,5 +1,5 @@
 ---
-slug: kdt-hackathon-review
+slug: kdt-hackathon
 title: "KDT 해커톤 참여 후기"
 description: "장려상 수상"
 publishedAt: "2025-09-03"

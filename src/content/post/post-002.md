@@ -1,5 +1,5 @@
 ---
-slug: first-impression-of-apple
+slug: apple
 title: "애플에 대한 첫인상"
 description: "시작은 아이팟 셔플로부터"
 publishedAt: "2024-10-04"

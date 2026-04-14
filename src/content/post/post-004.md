@@ -1,5 +1,5 @@
 ---
-slug: framer-29cm-seoul-meetup
+slug: framer-29cm-meetup
 title: "Framer x 29CM Seoul 밋업 참여 후기"
 description: "우리는 프레이머를 이렇게 활용합니다"
 publishedAt: "2024-11-28"

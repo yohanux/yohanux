@@ -1,5 +1,5 @@
 ---
-slug: designer-using-cursor
+slug: app-cursor
 title: "디자이너가 Cursor를 사용하며 느낀 점"
 description: "그 어느 때 보다 디자이너의 개발 지식이 필요한 시점"
 publishedAt: "2025-04-24"
