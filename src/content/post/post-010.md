@@ -1,5 +1,5 @@
 ---
-slug: post-010
+slug: building-app-with-chatgpt
 title: "Chat GPT를 이용한 앱 제작기"
 description: "디자이너 혼자 앱 스토어 출시를 할 수 있을까?"
 publishedAt: "2025-03-18"

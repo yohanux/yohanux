@@ -1,5 +1,5 @@
 ---
-slug: post-014
+slug: app-in-toss
 title: "디자이너 혼자 앱인토스에 게임 출시해보기"
 description: "사업자등록부터 수익화까지 정말 혼자 다해봤다"
 publishedAt: "2026-01-26"

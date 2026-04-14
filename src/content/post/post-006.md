@@ -1,5 +1,5 @@
 ---
-slug: post-006
+slug: designer-gear-thoughts
 title: "디자이너 장비에 대한 고찰"
 description: "나는 장비병 걸린 디자이너다"
 publishedAt: "2025-01-19"

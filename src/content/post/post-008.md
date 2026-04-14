@@ -1,5 +1,5 @@
 ---
-slug: post-008
+slug: duolingo-wit
 title: "듀오링고의 위트"
 description: "보법이 다르다"
 publishedAt: "2025-02-10"

@@ -1,5 +1,5 @@
 ---
-slug: post-001
+slug: theo-sprint-17-retrospective
 title: "테오의 스프린트 17기 디자이너 참여 후기"
 description: "6일간의 여정과 협업"
 publishedAt: "2024-04-10"

@@ -1,5 +1,5 @@
 ---
-slug: post-009
+slug: square-of-toss-session-review
 title: "토스 10주년 <스퀘어 오브 토스> 방문 및 세션 후기"
 description: "10년간 걸어온 혁신의 발자국들"
 publishedAt: "2025-02-28"
