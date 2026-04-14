@@ -98,6 +98,6 @@ tags: [App, Design]
 </br></br>
 AI는 지금도 여전히 너무 많은걸 바꿔놓는다. 내 열정이 그것에 흔들리지 않을 수 있어서, 오히려 더 타오를 수 있게 해줘서 고맙다.
 </br></br>
-(제작된 게임 ‘[카드라이크](https://apps.apple.com/kr/app/%EB%88%88%EC%9D%98-%EA%B0%90%EA%B0%81/id6744119745)’는 해당 링크와 QR코드를 통해 플레이 가능합니다)
+(제작된 게임 ‘[카드라이크](https://minion.toss.im/hz9S8tkv)’는 해당 링크와 QR코드를 통해 플레이 가능합니다)
 
 ![이미지 설명](/assets/resource/post_014_09.png)
