@@ -20,8 +20,7 @@ jobs:
   build:
     runs-on: ubuntu-latest
     env:
-      # next.config: basePath/assetPrefix = /yohanux when this is set (project site: user.github.io/yohanux/)
-      GITHUB_PAGES: "true"
+      # Custom domain deploy: do not force /yohanux basePath
       FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: "true"
     steps:
       - name: Checkout
