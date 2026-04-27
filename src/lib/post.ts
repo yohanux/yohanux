@@ -15,6 +15,7 @@ export interface Post extends PostMeta {
 }
 
 const POST_DIR = path.join(process.cwd(), "src/content/post");
+const HIDDEN_POST_SLUGS = new Set(["designer-gear"]);
 
 function parseFrontmatter(raw: string): { metadata: Partial<PostMeta>; content: string } {
   const frontmatterRegex = /^---\n([\s\S]*?)\n---\n?/;
@@ -92,7 +93,9 @@ export async function getAllPosts(): Promise<Post[]> {
 
   const posts = await Promise.all(markdownFiles.map((file) => loadPostFromFile(file.name)));
 
-  return posts.sort((a, b) => (a.publishedAt > b.publishedAt ? -1 : 1));
+  return posts
+    .filter((post) => !HIDDEN_POST_SLUGS.has(post.slug.trim().toLowerCase()))
+    .sort((a, b) => (a.publishedAt > b.publishedAt ? -1 : 1));
 }
 
 export async function getPostBySlug(slug: string): Promise<Post | null> {
