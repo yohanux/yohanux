@@ -3,7 +3,7 @@ slug: apple
 title: "애플에 대한 첫인상"
 description: "시작은 아이팟 셔플로부터"
 publishedAt: "2024-10-04"
-coverImage: "/assets/resource/thumbnail_002.webp"
+coverImage: "/assets/post/apple/thumbnail.webp"
 tags: [Project, Development]
 ---
 

@@ -3,7 +3,7 @@ slug: designer-gear
 title: "디자이너 장비에 대한 고찰"
 description: "나는 장비병 걸린 디자이너다"
 publishedAt: "2025-01-19"
-coverImage: "/assets/resource/thumbnail_006.webp"
+coverImage: "/assets/post/designer-gear/thumbnail.webp"
 tags: [Responsive, Design]
 ---
 

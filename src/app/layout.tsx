@@ -16,7 +16,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className="antialiased bg-white text-[var(--color-gray-900)]">
+      <body>
         <Navigation />
         {children}
         <Footer />

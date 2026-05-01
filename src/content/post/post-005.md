@@ -3,7 +3,7 @@ slug: toss-gradient
 title: "눈에 띄는 토스의 그라디언트 사용법"
 description: "작지만 돋보이는 디자인 디테일들"
 publishedAt: "2025-01-13"
-coverImage: "/assets/resource/thumbnail_005.webp"
+coverImage: "/assets/post/toss-gradient/thumbnail.webp"
 tags: [Accessibility, Web]
 ---
 

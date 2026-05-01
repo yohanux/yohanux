@@ -3,7 +3,7 @@ slug: teo-sprint
 title: "테오의 스프린트 17기 디자이너 참여 후기"
 description: "6일간의 여정과 협업"
 publishedAt: "2024-04-10"
-coverImage: "/assets/resource/thumbnail_001.webp"
+coverImage: "/assets/post/teo-sprint/thumbnail.webp"
 tags: [Example, Post]
 ---
 
@@ -20,9 +20,9 @@ tags: [Example, Post]
 44명이 순서대로 각자 생각해온 아이디어를 발표했다.
 <br><br>
 
-![이미지 설명](/assets/resource/post_001_01.webp)
+![이미지 설명](/assets/post/teo-sprint/teo-sprint_01.webp)
 
-![이미지 설명](/assets/resource/post_001_02.webp)
+![이미지 설명](/assets/post/teo-sprint/teo-sprint_02.webp)
 
 <br><br>
 
@@ -32,7 +32,7 @@ tags: [Example, Post]
 44개의 아이디어 중 내 아이디어의 좋아요 수가 2등을 해서 기뻤다.
 </br></br>
 
-![이미지 설명](/assets/resource/post_001_03.webp)
+![이미지 설명](/assets/post/teo-sprint/teo-sprint_03.webp)
 </br></br>
 
 하지만 반응과는 다르게 지원률이 적어 최소인원을 맞추지 못했고 팀 구성 실패 위기에 놓였다.
@@ -48,24 +48,24 @@ tags: [Example, Post]
 ### DAY 2
 </br>
 
-![이미지 설명](/assets/resource/post_001_04.webp)
+![이미지 설명](/assets/post/teo-sprint/teo-sprint_04.webp)
 </br></br>
 (Day 2를 진행하기 전, 유사 서비스 리서치를 진행했다)
 Day 2는 서비스 타겟을 설정하고 져니맵을 그려보며 생각의 주파수를 맞추는 작업을 진행했다.
 
-![이미지 설명](/assets/resource/post_001_05.webp)
+![이미지 설명](/assets/post/teo-sprint/teo-sprint_05.webp)
 </br>
 
-![이미지 설명](/assets/resource/post_001_06.webp)
+![이미지 설명](/assets/post/teo-sprint/teo-sprint_06.webp)
 </br>
 
-![이미지 설명](/assets/resource/post_001_07.webp)
+![이미지 설명](/assets/post/teo-sprint/teo-sprint_07.webp)
 </br>
 
 ### DAY 3 - 스케치와 결정
 </br>
 
-![이미지 설명](/assets/resource/post_001_08.webp)
+![이미지 설명](/assets/post/teo-sprint/teo-sprint_08.webp)
 </br></br>
 
 Day 3는 스케치와 결정을 하는 날이다.
@@ -75,17 +75,17 @@ MC를 맡으며 커뮤니케이션을 이끌려고 노력했던 모습 때문에
 페이지의 순서와 들어갈 기능등을 정리하고 개발 우선순위를 정했다.
 </br></br>
 
-![이미지 설명](/assets/resource/post_001_09.webp)
+![이미지 설명](/assets/post/teo-sprint/teo-sprint_09.webp)
 
-![이미지 설명](/assets/resource/post_001_10.webp)
+![이미지 설명](/assets/post/teo-sprint/teo-sprint_10.webp)
 
-![이미지 설명](/assets/resource/post_001_11.webp)
+![이미지 설명](/assets/post/teo-sprint/teo-sprint_11.webp)
 </br></br>
 
 ### DAY 4 & 5
 </br>
 
-![이미지 설명](/assets/resource/post_001_12.webp)
+![이미지 설명](/assets/post/teo-sprint/teo-sprint_12.webp)
 </br></br>
 실질적인 작업이 진행되는 이틀이다.
 올해의 벚꽃이 피크인 이번 주말을 포기하고 스프린트를 선택했다.
@@ -95,19 +95,19 @@ MC를 맡으며 커뮤니케이션을 이끌려고 노력했던 모습 때문에
 이번 스프린트에서 중요한 것은 완성도 높은 디자인 보다 가설을 세우고 빠르게 아이디어를 검증하는 것이 목표이기 때문에 속도가 중요했다.
 </br></br>
 
-![이미지 설명](/assets/resource/post_001_13.webp)
+![이미지 설명](/assets/post/teo-sprint/teo-sprint_13.webp)
 </br></br>
 
 우리의 프로젝트는 깃허브를 통해 관리했다.
 </br></br>
 
-![이미지 설명](/assets/resource/post_001_14.gif)
+![이미지 설명](/assets/post/teo-sprint/teo-sprint_14.gif)
 
-![이미지 설명](/assets/resource/post_001_15.gif)
+![이미지 설명](/assets/post/teo-sprint/teo-sprint_15.gif)
 
-![이미지 설명](/assets/resource/post_001_16.gif)
+![이미지 설명](/assets/post/teo-sprint/teo-sprint_16.gif)
 
-![이미지 설명](/assets/resource/post_001_17.gif)
+![이미지 설명](/assets/post/teo-sprint/teo-sprint_17.gif)
 </br></br>
 
 아쉽게도 iOS 개발자가 없었기 때문에 이틀 동안의 스프린트 일정으로는 다이나믹 아일랜드에 표현되는 Live Activities 기능을 구현하는것에 무리가 있었다. 그래서 프로토타입 영상으로 표현했다.
@@ -116,7 +116,7 @@ MC를 맡으며 커뮤니케이션을 이끌려고 노력했던 모습 때문에
 ### 마치며
 </br>
 
-![이미지 설명](/assets/resource/post_001_18.webp)
+![이미지 설명](/assets/post/teo-sprint/teo-sprint_18.webp)
 </br></br>
 생각보다 진지하게 작업에 임했던 탓일까,
 발표를 마친 뒤 헤어지기 전 마지막으로 회고의 시간을 가졌는데 다들 사담이 부족했다는 아쉬움이 많았다.

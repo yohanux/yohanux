@@ -3,7 +3,7 @@ slug: goorm-hackathon
 title: "구름 DEEP DIVE 해커톤 참여 후기"
 description: "대상 수상"
 publishedAt: "2025-08-05"
-coverImage: "/assets/resource/thumbnail_012.webp"
+coverImage: "/assets/post/goorm-hackathon/thumbnail.webp"
 tags: [CI/CD, Automation]
 ---
 

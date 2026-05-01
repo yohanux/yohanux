@@ -5,6 +5,7 @@ import Link from "next/link";
 import { useState, useEffect } from "react";
 import { usePathname } from "next/navigation";
 import { withBasePath } from "@/lib/path";
+import styles from "./navigation.module.css";
 
 const NAV_LINKS = ["post", "work", "resume", "blog", "about"];
 
@@ -13,10 +14,9 @@ export function Navigation() {
   const [scrollProgress, setScrollProgress] = useState(0);
   const pathname = usePathname();
 
-  // 상세페이지인지 확인 (/post/[slug] 또는 /blog/[slug])
   const normalizedPath = pathname || "";
   const pathSegments = normalizedPath.split("/").filter(Boolean);
-  const isDetailPage = 
+  const isDetailPage =
     (pathSegments[0] === "post" && pathSegments.length === 2) ||
     (pathSegments[0] === "blog" && pathSegments.length === 2);
 
@@ -32,24 +32,17 @@ export function Navigation() {
       const windowHeight = window.innerHeight;
       const documentHeight = document.documentElement.scrollHeight;
       const scrollTop = window.scrollY || document.documentElement.scrollTop;
-      
       const scrollableHeight = documentHeight - windowHeight;
       const progress = scrollableHeight > 0 ? (scrollTop / scrollableHeight) * 100 : 0;
-      
       setScrollProgress(Math.min(100, Math.max(0, progress)));
       rafId = null;
     };
 
     const handleScroll = () => {
-      if (rafId === null) {
-        rafId = requestAnimationFrame(updateScrollProgress);
-      }
+      if (rafId === null) rafId = requestAnimationFrame(updateScrollProgress);
     };
-
     const handleResize = () => {
-      if (rafId === null) {
-        rafId = requestAnimationFrame(updateScrollProgress);
-      }
+      if (rafId === null) rafId = requestAnimationFrame(updateScrollProgress);
     };
 
     updateScrollProgress();
@@ -59,23 +52,21 @@ export function Navigation() {
     return () => {
       window.removeEventListener("scroll", handleScroll);
       window.removeEventListener("resize", handleResize);
-      if (rafId !== null) {
-        cancelAnimationFrame(rafId);
-      }
+      if (rafId !== null) cancelAnimationFrame(rafId);
     };
   }, [isDetailPage]);
 
   return (
-    <header className="sticky top-0 z-50 w-full bg-white/70 backdrop-blur-[20px] relative">
-      <nav className="flex w-full items-center justify-between px-5 min-[810px]:px-[60px] min-[1200px]:px-20 py-2">
-        <Link 
-          href="/" 
-          className="flex items-center px-2 py-2 -mx-2 -my-2" 
+    <header className={styles.header}>
+      <nav className={styles.nav}>
+        <Link
+          href="/"
+          className={styles.logoLink}
           aria-label="Navigate home"
           onClick={() => setIsMenuOpen(false)}
         >
           <Image
-            src={withBasePath("/assets/resource/logo.svg")}
+            src={withBasePath("/assets/logo.svg")}
             alt="Yohan Park logo"
             width={114}
             height={20}
@@ -84,7 +75,7 @@ export function Navigation() {
         </Link>
 
         {/* Desktop & Tablet Menu */}
-        <ul className="hidden min-[810px]:flex items-center gap-2 text-[18px] leading-[22px] font-[var(--font-weight-600)] tracking-wide text-[var(--color-gray-900)]">
+        <ul className={`${styles.desktopMenu} typo-sub-8 font-600 text-gray-900`}>
           {NAV_LINKS.filter((link) => link !== "post").map((link) => {
             if (link === "resume") {
               return (
@@ -93,7 +84,7 @@ export function Navigation() {
                     href="https://drive.google.com/file/d/1kUvWxqga7N6lnu7I17FmQMnZOjZmUNRu/view?usp=share_link"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="block px-4 py-3 transition-opacity hover:opacity-30"
+                    className={styles.navItem}
                   >
                     {link.slice(0, 1).toUpperCase() + link.slice(1)}
                   </a>
@@ -102,10 +93,7 @@ export function Navigation() {
             }
             return (
               <li key={link}>
-                <Link
-                  href={`/${link}`}
-                  className="block px-4 py-3 transition-opacity hover:opacity-30"
-                >
+                <Link href={`/${link}`} className={styles.navItem}>
                   {link.slice(0, 1).toUpperCase() + link.slice(1)}
                 </Link>
               </li>
@@ -113,10 +101,10 @@ export function Navigation() {
           })}
         </ul>
 
-        {/* Mobile Hamburger Button - Only visible on mobile */}
+        {/* Mobile Hamburger */}
         <button
           onClick={() => setIsMenuOpen(!isMenuOpen)}
-          className="flex min-[810px]:hidden items-center justify-center w-8 h-8"
+          className={styles.mobileButton}
           aria-label="Toggle menu"
         >
           <svg
@@ -125,7 +113,7 @@ export function Navigation() {
             viewBox="0 0 32 32"
             fill="none"
             xmlns="http://www.w3.org/2000/svg"
-            className="transition-all duration-300"
+            style={{ transition: "all 300ms" }}
           >
             {isMenuOpen ? (
               <path
@@ -134,7 +122,6 @@ export function Navigation() {
                 strokeWidth="2"
                 strokeLinecap="round"
                 strokeLinejoin="round"
-                className="text-[var(--color-gray-900)]"
               />
             ) : (
               <path
@@ -143,7 +130,6 @@ export function Navigation() {
                 strokeWidth="2"
                 strokeLinecap="round"
                 strokeLinejoin="round"
-                className="text-[var(--color-gray-900)]"
               />
             )}
           </svg>
@@ -151,30 +137,29 @@ export function Navigation() {
 
         {/* Mobile Menu */}
         <div
-          className={`absolute top-full left-0 w-full bg-white border-b border-slate-200 min-[810px]:hidden z-50 transition-all duration-300 ease-in-out ${
-            isMenuOpen
-              ? "opacity-100 translate-y-0 visible"
-              : "opacity-0 -translate-y-4 invisible"
-          }`}
+          className={styles.mobileMenu}
+          style={{
+            opacity: isMenuOpen ? 1 : 0,
+            transform: isMenuOpen ? "translateY(0)" : "translateY(-1rem)",
+            visibility: isMenuOpen ? "visible" : "hidden",
+          }}
         >
-          <ul className="flex flex-col text-[18px] leading-[22px] font-[var(--font-weight-600)] text-[var(--color-gray-900)]">
+          <ul className={`${styles.mobileMenuList} typo-sub-8 font-600 text-gray-900`}>
             {NAV_LINKS.filter((link) => link !== "post").map((link, index) => {
               if (link === "resume") {
                 return (
                   <li
                     key={link}
-                    className={`transition-opacity duration-300 ease-out ${
-                      isMenuOpen ? "opacity-100" : "opacity-0"
-                    }`}
                     style={{
-                      transitionDelay: isMenuOpen ? `${index * 50}ms` : "0ms",
+                      opacity: isMenuOpen ? 1 : 0,
+                      transition: `opacity 300ms ease-out ${isMenuOpen ? index * 50 : 0}ms`,
                     }}
                   >
                     <a
                       href="https://drive.google.com/file/d/1kUvWxqga7N6lnu7I17FmQMnZOjZmUNRu/view?usp=share_link"
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="block px-6 py-4 transition-opacity hover:opacity-30"
+                      className={styles.mobileNavItem}
                       onClick={() => setIsMenuOpen(false)}
                     >
                       {link.slice(0, 1).toUpperCase() + link.slice(1)}
@@ -185,16 +170,14 @@ export function Navigation() {
               return (
                 <li
                   key={link}
-                  className={`transition-opacity duration-300 ease-out ${
-                    isMenuOpen ? "opacity-100" : "opacity-0"
-                  }`}
                   style={{
-                    transitionDelay: isMenuOpen ? `${index * 50}ms` : "0ms",
+                    opacity: isMenuOpen ? 1 : 0,
+                    transition: `opacity 300ms ease-out ${isMenuOpen ? index * 50 : 0}ms`,
                   }}
                 >
                   <Link
                     href={`/${link}`}
-                    className="block px-6 py-4 transition-opacity hover:opacity-30"
+                    className={styles.mobileNavItem}
                     onClick={() => setIsMenuOpen(false)}
                   >
                     {link.slice(0, 1).toUpperCase() + link.slice(1)}
@@ -205,26 +188,25 @@ export function Navigation() {
           </ul>
         </div>
       </nav>
-      {/* 스크롤 프로그레스바 - 상세페이지에서만 표시, border 역할, 메뉴가 열려있을 때는 숨김 */}
+
       {!isMenuOpen && (
-        <div className="absolute bottom-0 left-0 w-full h-[2px] z-[60]">
+        <div className={styles.progressBar}>
           {isDetailPage ? (
             <>
-              <div className="absolute bottom-0 left-0 w-full h-[1px] bg-[var(--color-gray-200)]" />
+              <div className={styles.progressBarBg} />
               <div
-                className="absolute bottom-0 left-0 h-[2px]"
-                style={{ 
+                className={styles.progressBarFill}
+                style={{
                   width: `${scrollProgress}%`,
-                  background: 'var(--color-progress-gradient)'
+                  background: "var(--progress-gradient)",
                 }}
               />
             </>
           ) : (
-            <div className="absolute bottom-0 left-0 w-full h-[1px] bg-[var(--color-gray-200)]" />
+            <div className={styles.progressBarBg} />
           )}
         </div>
       )}
     </header>
   );
 }
-

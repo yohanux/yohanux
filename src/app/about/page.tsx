@@ -1,22 +1,23 @@
 "use client";
 
 import Lottie from "lottie-react";
-import yohanAnimation from "../../../public/assets/resource/yohan.json";
+import yohanAnimation from "../../../public/assets/yohan.json";
+import styles from "./page.module.css";
 
 export default function AboutPage() {
   return (
-    <main className="flex min-h-[calc(100vh-68px)] flex-col items-center justify-center p-6">
-      <div className="profile grid max-w-[840px] items-center gap-[80px] md:grid-cols-2">
-        <div className="h-[240px] w-[240px] justify-self-center md:h-[300px] md:w-[300px]">
+    <main className={styles.main}>
+      <div className={styles.profile}>
+        <div className={styles.avatar}>
           <Lottie animationData={yohanAnimation} loop={true} />
         </div>
-        <div className="profile__contents text-left">
-          <h1 className="text-[32px] font-semibold leading-[44px] text-[var(--color-gray-900)] md:text-[40px] md:leading-[56px]">
+        <div className="text-left">
+          <h1 className="typo-1 font-600 text-gray-900">
             안녕하세요
             <br />
             디자이너 박요한 입니다
           </h1>
-          <p className="mt-8 text-[17px] font-normal leading-[28px] text-[var(--color-gray-600)]">
+          <p className="mt-8 typo-4 font-400 text-gray-600">
             디자인 시스템과 개발에 흥미가 있습니다. 복잡한 제품 구조를
             효율적으로 정리하고 직관적으로 전달하는 과정에서 가치를 느끼고
             즐깁니다.
@@ -35,6 +36,3 @@ export default function AboutPage() {
     </main>
   );
 }
-
-
-

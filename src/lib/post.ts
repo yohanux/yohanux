@@ -15,7 +15,7 @@ export interface Post extends PostMeta {
 }
 
 const POST_DIR = path.join(process.cwd(), "src/content/post");
-const HIDDEN_POST_SLUGS = new Set(["designer-gear"]);
+const HIDDEN_POST_SLUGS = new Set(["designer-gear", "goorm-hackathon"]);
 
 function parseFrontmatter(raw: string): { metadata: Partial<PostMeta>; content: string } {
   const frontmatterRegex = /^---\n([\s\S]*?)\n---\n?/;

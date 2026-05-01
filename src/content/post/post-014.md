@@ -3,10 +3,10 @@ slug: app-in-toss
 title: "디자이너 혼자 앱인토스에 게임 출시해보기"
 description: "사업자등록부터 수익화까지 정말 혼자 다해봤다"
 publishedAt: "2026-01-26"
-coverImage: "/assets/resource/thumbnail_014.webp"
+coverImage: "/assets/post/app-in-toss/thumbnail.webp"
 tags: [App, Design]
 ---
-![이미지 설명](/assets/resource/post_014_01.webp)
+![이미지 설명](/assets/post/app-in-toss/app-in-toss_01.webp)
 </br>
 
 작년 여름, 토스에서 앱인토스라는 기능을 런칭했다. 쉽게 설명하면 개인이 토스에 미니앱을 런칭해서 수익화시키는 것이다. 토스는 인앱 결제/광고 수익의 일부를 가져가는 대신 3000만 유저 플랫폼이라는 홍보창구를 제공해주는 셈이다.
@@ -15,7 +15,7 @@ tags: [App, Design]
 </br></br>
 
 ### 콘솔 시작하기
-![이미지 설명](/assets/resource/post_014_02.webp)
+![이미지 설명](/assets/post/app-in-toss/app-in-toss_02.webp)
 우선 앱인토스 콘솔이라는 개념이 있다, 서비스의 정보를 등록하고 출시를 검토받는 등의 역할을 하는 곳이다. 먼저 이곳에 출시할 서비스의 기본적인 정보들을 등록해서 1차 승인을 받아야 한다. 나는 하루 정도 걸렸다.
 그 이후에는 수익 정산을 위해 사업자 번호를 등록하고 또 한번 승인을 기다려야한다. 이틀 정도 걸린 것 같다.
 </br></br>
@@ -23,7 +23,7 @@ tags: [App, Design]
 ### 개발 시작하기
 </br>
 
-![이미지 설명](/assets/resource/post_014_03.webp)
+![이미지 설명](/assets/post/app-in-toss/app-in-toss_03.webp)
 </br>
 
 처음에는 막막했다. 자바스크립트 기초까지만 배웠던 터라 가이드 문서를 보자마자 숨이 막혀 포기할까 싶었다. 하지만 토스에서 친절하게도 영상 강의를 제공해주었는데 이것이 꽤 도움이 되었다.
@@ -33,7 +33,7 @@ tags: [App, Design]
 이후에는 바이브 코딩으로 시작하면서 뼈대를 잡고, 어느정도 기능이 구현된 이후부터는 피그마를 통해 디자인 에셋들을 그려나갔다.
 </br></br>
 
-![이미지 설명](/assets/resource/post_014_04.webp)
+![이미지 설명](/assets/post/app-in-toss/app-in-toss_04.webp)
 </br>
 
 스무살 초반에, 작곡을 전혀 모르지만 DAW 프로그램으로 간단한 비트들을 만든 경험이 있다. 그 기억을 살려 개러지 밴드로 직접 노트를 찍어 간단한 BGM을 만들었다. (추후 업데이트에서는 AI로 BGM을 생성해 교체했다)
@@ -44,7 +44,7 @@ tags: [App, Design]
 ### 디자인 하기
 </br>
 
-![이미지 설명](/assets/resource/post_014_05.webp)
+![이미지 설명](/assets/post/app-in-toss/app-in-toss_05.webp)
 </br>
 
 게임 UI는 내 분야가 아니다. 그래서 더 막막했다. 어설프더라도 어떻게든 도트 스타일로 제작을 하고싶었다. 이 부분은 Pixellab 이라는 사이트를 결제해 제작했다. 그러나 낮은 해상도로 도트화된 png 이미지를 그대로 확대해서 쓰기에는 화질이 저하되는 이슈가 생긴다. 그래서 png를 svg로 벡터화 시키는 과정이 조금 복잡했는데 순서는 이러했다.
@@ -63,7 +63,7 @@ tags: [App, Design]
 ### 개발자 커뮤니티
 </br>
 
-![이미지 설명](/assets/resource/post_014_06.webp)
+![이미지 설명](/assets/post/app-in-toss/app-in-toss_06.webp)
 출시를 준비하면서 좋았던 부분은 개발자 커뮤니티였다. 진행 중 막히는 부분이 생길 때 검색을 해보면 나와 비슷한 질문을 남긴 유저들이 있었다. 덕분에 참고하여 해결해 나갔다. 또한 토스 측에서도 활발히 댓글을 달며 소통하는 모습이 인상깊었다.
 </br></br>
 제작을 하면서 중간중간 PC 브라우저와 디바이스를 통해 테스트했다. 광고도 잘 불러오고 로컬 저장도 가능하다. 이제 정말 출시만 남았다. 나는 설레는 마음으로 토스팀에 검토를 요청했다.
@@ -71,12 +71,12 @@ tags: [App, Design]
 ### 검토와 출시
 </br>
 
-![이미지 설명](/assets/resource/post_014_07.webp)
+![이미지 설명](/assets/post/app-in-toss/app-in-toss_07.webp)
 </br></br>
 검토는 2~3일 정도 걸린 것 같다. 한 번에 승인될 것이라고 예상은 안했는데 역시나 반려를 받았다. 파일에 앱 이름이 한글이 아닌 영어로 표기된게 문제였다. 또한 포그라운드로 복귀시 BGM이 재생되지 않는 오류를 지적해주셨다. 나는 헷갈리는 부분을 채널톡 문의를 통해 빠르게 고치고 다시 검토를 요청해 다음 날 출시를 승인받았다.
 </br></br>
 
-![이미지 설명](/assets/resource/post_014_08.webp)
+![이미지 설명](/assets/post/app-in-toss/app-in-toss_08.webp)
 </br></br>
 출시하기 버튼을 누르고 곧바로 토스에 들어가 확인해보았다. 처음 앱스토어에 내가 만든 앱이 등록되었을 때 정말 신기했는데 이번엔 토스에 출시되었다. 한달 간 고생했던 순간들이 떠오르며 뿌듯하다. 앞으로 열심히 업데이트를 해야겠다.
 </br></br>
@@ -92,7 +92,7 @@ tags: [App, Design]
 ### 마치며
 </br>
 
-![이미지 설명](/assets/resource/post_014_10.png)
+![이미지 설명](/assets/post/app-in-toss/app-in-toss_10.png)
 </br></br>
 물론 이것이 정석적인 게임 개발은 아닐 것이다. 여전히 백엔드에 대한 이해도 부족하고 게임 에셋도 어설프다. 그러나 이 모든것을 혼자 해냈다. 그리고 매우 적은 금액이지만 수익화 구조를 만들었다. 나는 이것만으로도 AI 툴 결제 비용 20만원이 전혀 아깝지 않았다. 물론 앞으로는 더 적은 비용으로 큰 수익을 만들어야겠지만 말이다.
 </br></br>
@@ -100,4 +100,4 @@ AI는 지금도 여전히 너무 많은걸 바꿔놓는다. 내 열정이 그것
 </br></br>
 (제작된 게임 ‘[카드라이크](https://minion.toss.im/hz9S8tkv)’는 해당 링크와 QR코드를 통해 플레이 가능합니다)
 
-![이미지 설명](/assets/resource/post_014_09.png)
+![이미지 설명](/assets/post/app-in-toss/app-in-toss_09.png)

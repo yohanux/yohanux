@@ -3,13 +3,13 @@ slug: square-of-toss
 title: "토스 10주년 <스퀘어 오브 토스> 방문 및 세션 후기"
 description: "10년간 걸어온 혁신의 발자국들"
 publishedAt: "2025-02-28"
-coverImage: "/assets/resource/thumbnail_009.webp"
+coverImage: "/assets/post/square-of-toss/thumbnail.webp"
 tags: [CI/CD, Automation]
 ---
 
 올해로 토스가 10주년을 맞이하여 [<10 to 100>](https://toss.im/10to100)이라는 이름으로 캠페인을 진행했다.
 
-![이미지 설명](/assets/resource/포스트/250228/250228_00.png)
+![이미지 설명](/assets/post/square-of-toss/square-of-toss_00.png)
 </br>
 
 10주년 캠페인 웹사이트가 공개되었을 당시, 진행되는 위닝 세션들을 쭉 살펴보았다. 모두 궁금하고 흥미로웠지만 하나만 선택 가능했는데 그 중 강수영님의 세션을 꼭 듣고 싶었다. 내가 존경하는 디자이너 중 한 분이기 때문이다.
@@ -17,13 +17,13 @@ tags: [CI/CD, Automation]
 </br></br>
 ### <스퀘어 오브 토스>
 
-![이미지 설명](/assets/resource/포스트/250228/250228_01.png)
+![이미지 설명](/assets/post/square-of-toss/square-of-toss_01.png)
 </br>
 
 금요일 오전 11시 반에 도착했지만 이미 현장 예약을 신청한 사람이 많았다.
 
-![이미지 설명](/assets/resource/포스트/250228/250228_02.png)
-![이미지 설명](/assets/resource/포스트/250228/250228_03.png)
+![이미지 설명](/assets/post/square-of-toss/square-of-toss_02.png)
+![이미지 설명](/assets/post/square-of-toss/square-of-toss_03.png)
 </br>
 
 입장 체크인은 안내받은 문자와 FacePass 2가지 방법이 있다.
@@ -31,37 +31,37 @@ tags: [CI/CD, Automation]
 나는 오프라인에서 FacePass를 경험해보고 싶어 이 방법으로 체크인했는데 꽤 빠르게 인식됐다.
 체크인이 완료되자 안내 책자와 커피 사일로 쿠폰, 스티커가 담긴 홀더 파일을 주셨다.
 
-![이미지 설명](/assets/resource/포스트/250228/250228_04.png)
+![이미지 설명](/assets/post/square-of-toss/square-of-toss_04.png)
 </br>
 
 체크인을 거치면 들어갈 수 있는 B동의 입구이다. 1층에서는 세션을, 1.5층과 2층에서는 전시 및 키링 워크샵을 체험할 수 있다.
 </br></br>
 ### 위닝 세션
 
-![이미지 설명](/assets/resource/포스트/250228/250228_05.png)
-![이미지 설명](/assets/resource/포스트/250228/250228_07.png)
+![이미지 설명](/assets/post/square-of-toss/square-of-toss_05.png)
+![이미지 설명](/assets/post/square-of-toss/square-of-toss_07.png)
 </br>
 
 두번 째 세션이 진행되는 현장의 모습이다. 가로가 매우 긴 비율의 스크린을 사용하여 영상을 보는 재미가 있었다. 세션의 내용은 토스의 태동기 > 성장기 > 진화기를 거쳐 Now&Next를 순서대로 소개하셨다.
 
-![이미지 설명](/assets/resource/포스트/250228/250228_08.png)
-![이미지 설명](/assets/resource/포스트/250228/250228_09.png)
+![이미지 설명](/assets/post/square-of-toss/square-of-toss_08.png)
+![이미지 설명](/assets/post/square-of-toss/square-of-toss_09.png)
 </br>
 
 중간중간 흥미로운 디자인 B안들도 공개되었는데 이 그래픽들이 토스의 로고 시안이라고 한다.
 
-![이미지 설명](/assets/resource/포스트/250228/250228_10.png)
-![이미지 설명](/assets/resource/포스트/250228/250228_11.png)
+![이미지 설명](/assets/post/square-of-toss/square-of-toss_10.png)
+![이미지 설명](/assets/post/square-of-toss/square-of-toss_11.png)
 </br>
 
 토스의 AI 그래픽 생성기인 토스트(tosst) 역시 초반에는 이러한 결과물이 나왔다고 한다. 맨 좌측 이미지는 뉴진스를 생성한 것이라고 한다(!)
 
-![이미지 설명](/assets/resource/포스트/250228/250228_14.png)
+![이미지 설명](/assets/post/square-of-toss/square-of-toss_14.png)
 </br>
 
 인터랙션 컴포넌트를 쉽게 사용할 수 있도록 만들어진 플랫폼 공통 언어 라이브러리 Rally에 대한 내용도 소개되었다.
 
-![이미지 설명](/assets/resource/포스트/250228/250228_13.png)
+![이미지 설명](/assets/post/square-of-toss/square-of-toss_13.png)
 </br>
 
 어느정도 고도화 되었고 잘한다고 소문났으니 이제 끝인가? 싶지만 토스는 아직도 디자인을 잘하지 않는다, 즉 여전히 해결해야할 문제들이 많다는 내용으로 세션이 마무리 되었다. 토스를 오랫동안 관심있게 지켜봐온 유저들에게는 익숙할만한 내용들이 많이 보였다. 그만큼 평소 아티클과 홍보에 힘을 썼다는 증거가 아닐까 싶다.</br></br>
@@ -69,29 +69,29 @@ tags: [CI/CD, Automation]
 </br></br>
 ### 10주년 전시 <10의 여정>
 
-![이미지 설명](/assets/resource/포스트/250228/250228_20.png)
-![이미지 설명](/assets/resource/포스트/250228/250228_21.png)
-![이미지 설명](/assets/resource/포스트/250228/250228_23.png)
+![이미지 설명](/assets/post/square-of-toss/square-of-toss_20.png)
+![이미지 설명](/assets/post/square-of-toss/square-of-toss_21.png)
+![이미지 설명](/assets/post/square-of-toss/square-of-toss_23.png)
 </br>
 
 2층은 <10의 여정>이라는 이름의 인터랙티브 전시이다. 월별 금융 생활 데이터와 10년 간의 10가지 변화 데이터 리포트를 소개한다.
 (해당 내용은 [토스 피드](https://blog.toss.im/edition/data-report)에서도 볼 수 있다.)
 
-![이미지 설명](/assets/resource/포스트/250228/250228_22.png)
+![이미지 설명](/assets/post/square-of-toss/square-of-toss_22.png)
 </br>
 그 중 토스의 보안을 소개하는 부분이 흥미로웠다. 그냥 보면 흰색 화면이지만 돋보기를 통해 보면 사진 처럼 애니메이션이 보인다. 보안이라는 주제와 걸맞는 연출이 재미있었다.
 
-![이미지 설명](/assets/resource/포스트/250228/250228_24.png)
+![이미지 설명](/assets/post/square-of-toss/square-of-toss_24.png)
 </br>
 다음은 키워드 포토존이다. 이후에도 언급하겠지만 10가지 키워드가 이번 캠페인에서 지속적으로 등장한다. 나는 그 중에서 'STAY DRIVEN'을 골랐다. 일에 대한 열정이 오랫동안 식지 않고 싶은 나의 바램을 담았다.
 
-![이미지 설명](/assets/resource/포스트/250228/250228_25.png)
-![이미지 설명](/assets/resource/포스트/250228/250228_26.png)
+![이미지 설명](/assets/post/square-of-toss/square-of-toss_25.png)
+![이미지 설명](/assets/post/square-of-toss/square-of-toss_26.png)
 </br>
 
 사진을 찍고나면 마지막으로 금융 성향 테스트를 진행한다. 결과지와 일치하는 우편함을 열어보면 미래의 내가 보낸 편지를 받을 수 있다. '도전이 어려울수록 거세게 타오르는 너에게'라니, 역시 토스답다. 사소한 라이팅 하나지만 멋지다.
 
-![이미지 설명](/assets/resource/포스트/250228/250228_27.png)
+![이미지 설명](/assets/post/square-of-toss/square-of-toss_27.png)
 </br>
 
 이후 맞춤형 금융 정보가 담긴 책자를 가져갈 수 있다. 이렇게 2층의 모든 공간이 끝났고 1.5층으로 내려갔다.
@@ -99,37 +99,37 @@ tags: [CI/CD, Automation]
 </br></br>
 ### 키링 워크샵
 
-![이미지 설명](/assets/resource/포스트/250228/250228_40.png)
-![이미지 설명](/assets/resource/포스트/250228/250228_41.png)
+![이미지 설명](/assets/post/square-of-toss/square-of-toss_40.png)
+![이미지 설명](/assets/post/square-of-toss/square-of-toss_41.png)
 </br>
 
 2층을 내려오면 마지막 순서인 키링 워크샵이다. 이곳에서는 직접 NFC 키링을 만들어볼 수 있었다.
 <금융 성향>, <스퀘어 오브 토스>, <10가지 키워드>에서 항목별로 1개씩 재료를 선택해 엮어 완성했다.
 
-![이미지 설명](/assets/resource/포스트/250228/250228_42.png)
+![이미지 설명](/assets/post/square-of-toss/square-of-toss_42.png)
 </br>
 
 나는 직전의 금융 유형 결과인 '용감한 승부사'(글러브)와 'STAY DRIVEN'(추진력의 불씨를 꺼트리지 않기)으로 키링을 완성했다.
 
-![이미지 설명](/assets/resource/포스트/250228/250228_43.png)
+![이미지 설명](/assets/post/square-of-toss/square-of-toss_43.png)
 </br>
 
 완성된 키링은 내부에 설치된 NFC 혹은 스마트폰에 가까이 태그하여 사용한다. 내 금융 성향에 맞는 토스피드 시리즈를 확인할 수 있다.
 </br></br>
 ### 기념품숍 / 커피 사일로
 
-![이미지 설명](/assets/resource/포스트/250228/250228_50.png)
+![이미지 설명](/assets/post/square-of-toss/square-of-toss_50.png)
 </br>
 
 바깥으로 나오면 A동에 기념품숍, 라이브러리, 커피 사일로가 있다. 10가지 키워드가 새겨진 모자와 티셔츠를 판매중이었다.
 
-![이미지 설명](/assets/resource/포스트/250228/250228_51.png)
+![이미지 설명](/assets/post/square-of-toss/square-of-toss_51.png)
 </br>
 
 벽면에는 메시지 카드를 가져갈 수 있었다. 키워드 하나하나가 모두 와닿았다. 또한 인증 사진을 SNS에 공유하면 에코백을 증정해주는 이벤트도 진행했다.
 
-![이미지 설명](/assets/resource/포스트/250228/250228_52.png)
-![이미지 설명](/assets/resource/포스트/250228/250228_53.png)
+![이미지 설명](/assets/post/square-of-toss/square-of-toss_52.png)
+![이미지 설명](/assets/post/square-of-toss/square-of-toss_53.png)
 </br>
 
 옆 건물에서는 토스의 자랑(?) 커피 사일로를 맛볼 수 있다. 받았던 홀더 파일 속 담긴 커피 쿠폰을 제시하면 쿠키와 함께 무료로 제공해주신다. 참고로 토스는 커피 사일로 소개 콘텐츠를 작성한 적이 있을 정도로 사내 카페에 진심이다. 
@@ -138,7 +138,7 @@ tags: [CI/CD, Automation]
 </br></br>
 ### 마치며
 
-![이미지 설명](/assets/resource/포스트/250228/250228_60.png)
+![이미지 설명](/assets/post/square-of-toss/square-of-toss_60.png)
 </br>
 
 오늘날의 토스는 국내 스타트업계의 교과서 같은 존재가 되었다. 여전히 많은 학부생과 현업 디자이너들이 레퍼런스로 토스를 참고한다. 또한 커리어에서 한번쯤 꼭 일해 보고 싶은 기업으로 꼽힌다. 이러한 위치까지 올 수 있었던 까닭은 지난 10년간 사용성을 위해 수많은 도전과 실패를 반복했기 때문이다. 그리고 그렇게 이루어낸 혁신들과 과정을 이번 <스퀘어 오브 토스>에서 보여주었다.

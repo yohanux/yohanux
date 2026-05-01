@@ -1,10 +1,11 @@
 import Image from "next/image";
 import Link from "next/link";
+import styles from "./footer.module.css";
 
 export default function Footer() {
   return (
-    <footer className="bg-[var(--color-gray-50)] flex flex-col items-center justify-center gap-10 py-8">
-      <div className="flex gap-3">
+    <footer className={styles.footer}>
+      <div className={styles.icons}>
         <Link
           href="https://www.linkedin.com/in/yohan-park-753b97230/"
           target="_blank"
@@ -14,7 +15,6 @@ export default function Footer() {
             alt="LinkedIn"
             width={32}
             height={32}
-            className="h-8 w-8"
           />
         </Link>
         <Link href="https://www.instagram.com/yohan.ux/" target="_blank">
@@ -23,7 +23,6 @@ export default function Footer() {
             alt="Instagram"
             width={32}
             height={32}
-            className="h-8 w-8"
           />
         </Link>
         <Link href="https://brunch.co.kr/@yohanux" target="_blank">
@@ -32,17 +31,16 @@ export default function Footer() {
             alt="Brunch"
             width={32}
             height={32}
-            className="h-8 w-8"
           />
         </Link>
       </div>
-      <div className="flex flex-col items-center gap-2.5">
-        <p className="text-sm text-[var(--color-gray-400)]">
+      <div className={styles.info}>
+        <p className="typo-sub-10 text-gray-400">
           © 2025 YOHANUX. All rights reserved.
         </p>
         <a
           href="mailto:yohanux@gmail.com"
-          className="text-sm text-[var(--color-gray-400)]"
+          className="typo-sub-10 text-gray-400"
         >
           yohanux@gmail.com
         </a>

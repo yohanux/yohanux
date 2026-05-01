@@ -3,7 +3,7 @@ slug: apple-intelligence
 title: "애플 인텔리전스 생성형 이미지 사용기"
 description: "AI를 대하는 애플의 관점"
 publishedAt: "2024-11-25"
-coverImage: "/assets/resource/thumbnail_003.avif"
+coverImage: "/assets/post/apple-intelligence/thumbnail.avif"
 tags: [Design, System]
 ---
 
