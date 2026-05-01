@@ -133,6 +133,8 @@ input, select, textarea { font: inherit; }
 
   --typo-hero: 48px;
   --typo-lh-hero: 62px;
+  --typo-hero-2: 32px;
+  --typo-lh-hero-2: 40px;
   --typo-1: 30px;
   --typo-sub-1: 29px;
   --typo-sub-2: 28px;
@@ -215,7 +217,10 @@ body {
 }
 
 /* ── Typography ── */
-.typo-hero  { font-size: 48px;                    line-height: 62px; }
+.typo-hero  { font-size: var(--typo-hero-2);       line-height: var(--typo-lh-hero-2); }
+@media (min-width: 810px) {
+  .typo-hero { font-size: var(--typo-hero);        line-height: var(--typo-lh-hero); }
+}
 .typo-1     { font-size: var(--typo-1);            line-height: var(--typo-lh-1); }
 .typo-2     { font-size: var(--typo-2);            line-height: var(--typo-lh-2); }
 .typo-3     { font-size: var(--typo-3);            line-height: var(--typo-lh-3); }
