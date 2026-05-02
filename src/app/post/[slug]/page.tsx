@@ -127,9 +127,10 @@ export default async function PostDetailPage({ params }: PostPageProps) {
                     <Image
                       src={withBasePath(String(src) || "")}
                       alt={alt || ""}
-                      fill
-                      className="object-contain"
-                      sizes="(max-width: 768px) 100vw, 768px"
+                      width={0}
+                      height={0}
+                      sizes="100vw"
+                      style={{ width: "100%", height: "auto" }}
                       {...rest}
                     />
                   </span>

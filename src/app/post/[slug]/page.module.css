@@ -32,12 +32,10 @@
 }
 
 .imageWrapper {
-  position: relative;
   display: block;
   width: calc(100% + 2.5rem);
   margin-left: -1.25rem;
   margin-right: -1.25rem;
-  aspect-ratio: 16 / 9;
   overflow: hidden;
 }
 
