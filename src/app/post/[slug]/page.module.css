@@ -34,7 +34,9 @@
 .imageWrapper {
   position: relative;
   display: block;
-  width: 100%;
+  width: calc(100% + 2.5rem);
+  margin-left: -1.25rem;
+  margin-right: -1.25rem;
   aspect-ratio: 16 / 9;
   overflow: hidden;
 }
@@ -51,14 +53,6 @@
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
-}
-
-.imageWrapper {
-  position: relative;
-  display: block;
-  width: 100%;
-  aspect-ratio: 16 / 9;
-  overflow: hidden;
 }
 
 .link:hover {
@@ -84,4 +78,5 @@
 
 @media (min-width: 1200px) {
   .body { padding: 0; }
+  .imageWrapper { width: 100%; margin-left: 0; margin-right: 0; }
 }
