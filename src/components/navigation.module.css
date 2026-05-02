@@ -93,6 +93,10 @@
   background-color: var(--gray-200);
 }
 
+@media (prefers-color-scheme: dark) {
+  .progressBarBg { background-color: var(--gray-100); }
+}
+
 .progressBarFill {
   position: absolute;
   bottom: 0;
