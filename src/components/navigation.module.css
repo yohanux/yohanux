@@ -22,6 +22,14 @@
   margin: -0.5rem;
 }
 
+.logo {
+  display: block;
+}
+
+@media (prefers-color-scheme: dark) {
+  .logo { filter: invert(1); }
+}
+
 .desktopMenu {
   display: none;
   align-items: center;

@@ -79,6 +79,7 @@ export function Navigation() {
             width={114}
             height={20}
             priority
+            className={styles.logo}
           />
         </Link>
 
