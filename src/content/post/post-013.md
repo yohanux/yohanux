@@ -1,7 +1,7 @@
 ---
 slug: kdt-hackathon
-title: "KDT 해커톤 참여 후기"
-description: "장려상 수상"
+title: "제7회 KDT 해커톤 수상 후기"
+description: "296팀 중 11팀에 들기까지의 여정"
 publishedAt: "2025-09-03"
 coverImage: "/assets/post/kdt-hackathon/thumbnail.webp"
 tags: [Design, Hackathon]

@@ -1,9 +1,9 @@
 ---
 slug: fast-interaction
 title: "빠른 동작으로 확인하는 사용자 경험 디테일"
-description: "작지만 돋보이는 디자인 디테일들"
+description: "서비스는 얼마나 작은 부분까지 신경 쓸까?"
 publishedAt: "2025-02-04"
-coverImage: "/assets/post/fast-interaction/thumbnail.avif"
+coverImage: "/assets/post/fast-interaction/thumbnail.png"
 tags: [TypeScript, Type]
 ---
 
