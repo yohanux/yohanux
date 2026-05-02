@@ -16,6 +16,21 @@ interface PostPageProps {
 
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://yohanux.com";
 
+function getYouTubeId(url: string): string | null {
+  try {
+    const u = new URL(url);
+    if (u.hostname === "youtu.be") return u.pathname.slice(1);
+    if (u.hostname.includes("youtube.com")) {
+      if (u.pathname === "/watch") return u.searchParams.get("v");
+      const embedMatch = u.pathname.match(/\/embed\/([^/?]+)/);
+      if (embedMatch) return embedMatch[1];
+    }
+    return null;
+  } catch {
+    return null;
+  }
+}
+
 export async function generateMetadata({ params }: PostPageProps): Promise<Metadata> {
   const { slug } = await params;
   const normalizedSlug = decodeURIComponent(slug).trim().toLowerCase();
@@ -136,9 +151,22 @@ export default async function PostDetailPage({ params }: PostPageProps) {
                   </span>
                 );
               },
-              a: ({ node, ...props }) => (
-                <a className={`text-primary ${styles.link}`} {...props} />
-              ),
+              a: ({ node, href, children, ...props }) => {
+                const youtubeId = href ? getYouTubeId(href) : null;
+                if (youtubeId) {
+                  return (
+                    <span className={styles.youtubeWrapper}>
+                      <iframe
+                        src={`https://www.youtube-nocookie.com/embed/${youtubeId}`}
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        allowFullScreen
+                        className={styles.youtubeFrame}
+                      />
+                    </span>
+                  );
+                }
+                return <a href={href} className={`text-primary ${styles.link}`} {...props}>{children}</a>;
+              },
               blockquote: ({ node, ...props }) => (
                 <blockquote className={styles.blockquote} {...props} />
               ),

@@ -12,6 +12,7 @@ const NAV_LINKS = ["post", "work", "resume", "blog", "about"];
 export function Navigation() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [scrollProgress, setScrollProgress] = useState(0);
+  const [isScrolled, setIsScrolled] = useState(false);
   const pathname = usePathname();
 
   const normalizedPath = pathname || "";
@@ -19,6 +20,13 @@ export function Navigation() {
   const isDetailPage =
     (pathSegments[0] === "post" && pathSegments.length === 2) ||
     (pathSegments[0] === "blog" && pathSegments.length === 2);
+
+  useEffect(() => {
+    const handleBorderScroll = () => setIsScrolled(window.scrollY > 0);
+    handleBorderScroll();
+    window.addEventListener("scroll", handleBorderScroll, { passive: true });
+    return () => window.removeEventListener("scroll", handleBorderScroll);
+  }, []);
 
   useEffect(() => {
     if (!isDetailPage) {
@@ -193,7 +201,7 @@ export function Navigation() {
         <div className={styles.progressBar}>
           {isDetailPage ? (
             <>
-              <div className={styles.progressBarBg} />
+              <div className={styles.progressBarBg} style={{ opacity: isScrolled ? 1 : 0, transition: "opacity 150ms ease" }} />
               <div
                 className={styles.progressBarFill}
                 style={{
@@ -203,7 +211,7 @@ export function Navigation() {
               />
             </>
           ) : (
-            <div className={styles.progressBarBg} />
+            <div className={styles.progressBarBg} style={{ opacity: isScrolled ? 1 : 0, transition: "opacity 150ms ease" }} />
           )}
         </div>
       )}
