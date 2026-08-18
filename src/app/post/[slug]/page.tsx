@@ -96,7 +96,7 @@ export default async function PostDetailPage({ params }: PostPageProps) {
           <h1 className="typo-hero font-600 text-gray-900">
             {title}
           </h1>
-          <p className="typo-sub-9 font-500 text-gray-600">
+          <p className={`${styles.subtitle} font-400 text-gray-600`}>
             {subtitle}
           </p>
           <p className="typo-sub-10 text-gray-500">

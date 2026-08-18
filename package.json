@@ -2,6 +2,9 @@
   "name": "yohanux",
   "version": "0.1.0",
   "private": true,
+  "browserslist": [
+    "defaults"
+  ],
   "scripts": {
     "dev": "next dev",
     "build": "next build",
@@ -24,6 +27,7 @@
     "@types/node": "^20",
     "@types/react": "^19",
     "@types/react-dom": "^19",
+    "baseline-browser-mapping": "^2.11.14",
     "eslint": "^9",
     "eslint-config-next": "16.0.4",
     "tailwindcss": "^4",

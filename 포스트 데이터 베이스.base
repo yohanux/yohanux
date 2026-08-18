@@ -1,0 +1,18 @@
+properties:
+  file.name:
+    displayName: 포스트명
+views:
+  - type: table
+    name: 표
+    filters:
+      and:
+        - file.folder == "src/content/post"
+    order:
+      - file.name
+      - title
+      - description
+      - publishedAt
+      - slug
+    sort:
+      - property: file.name
+        direction: ASC

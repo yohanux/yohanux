@@ -2,22 +2,22 @@
 
 import Lottie from "lottie-react";
 import yohanAnimation from "../../../public/assets/yohan.json";
+import { SplitText } from "@/components/split-text";
 import styles from "./page.module.css";
+
+const GREETING_LINES = ["안녕하세요", "디자이너 박요한 입니다"];
 
 export default function AboutPage() {
   return (
     <main className={styles.main}>
       <div className={styles.profile}>
+        <h1 className={`${styles.title} typo-1 font-600 text-gray-900`}>
+          <SplitText lines={GREETING_LINES} />
+        </h1>
         <div className={styles.avatar}>
           <Lottie animationData={yohanAnimation} loop={true} />
         </div>
-        <div className="text-left">
-          <h1 className="typo-1 font-600 text-gray-900">
-            안녕하세요
-            <br />
-            디자이너 박요한 입니다
-          </h1>
-          <p className="mt-8 typo-4 font-400 text-gray-600">
+        <p className={`${styles.body} typo-5 text-gray-800`}>
             디자인 시스템과 개발에 흥미가 있습니다. 복잡한 제품 구조를
             효율적으로 정리하고 직관적으로 전달하는 과정에서 가치를 느끼고
             즐깁니다.
@@ -30,8 +30,7 @@ export default function AboutPage() {
             <br />
             <br />
             끝으로, 저는 크리스천입니다.
-          </p>
-        </div>
+        </p>
       </div>
     </main>
   );

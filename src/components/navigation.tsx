@@ -2,220 +2,194 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { useState, useEffect } from "react";
 import { usePathname } from "next/navigation";
+import { useEffect, useState } from "react";
 import { withBasePath } from "@/lib/path";
 import styles from "./navigation.module.css";
 
-const NAV_LINKS = ["post", "work", "resume", "blog", "about"];
+const NAV_LINKS = ["post", "work", "resume", "about"];
+const RESUME_URL =
+  "https://drive.google.com/file/d/1kUvWxqga7N6lnu7I17FmQMnZOjZmUNRu/view?usp=share_link";
 
-export function Navigation() {
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [scrollProgress, setScrollProgress] = useState(0);
-  const [isScrolled, setIsScrolled] = useState(false);
-  const pathname = usePathname();
+function NavLinkItem({ link, className }: { link: string; className: string }) {
+  const label = link.slice(0, 1).toUpperCase() + link.slice(1);
 
-  const normalizedPath = pathname || "";
-  const pathSegments = normalizedPath.split("/").filter(Boolean);
-  const isDetailPage =
-    (pathSegments[0] === "post" && pathSegments.length === 2) ||
-    (pathSegments[0] === "blog" && pathSegments.length === 2);
-
-  useEffect(() => {
-    const handleBorderScroll = () => setIsScrolled(window.scrollY > 0);
-    handleBorderScroll();
-    window.addEventListener("scroll", handleBorderScroll, { passive: true });
-    return () => window.removeEventListener("scroll", handleBorderScroll);
-  }, []);
-
-  useEffect(() => {
-    if (!isDetailPage) {
-      setScrollProgress(0);
-      return;
-    }
-
-    let rafId: number | null = null;
-
-    const updateScrollProgress = () => {
-      const windowHeight = window.innerHeight;
-      const documentHeight = document.documentElement.scrollHeight;
-      const scrollTop = window.scrollY || document.documentElement.scrollTop;
-      const scrollableHeight = documentHeight - windowHeight;
-      const progress = scrollableHeight > 0 ? (scrollTop / scrollableHeight) * 100 : 0;
-      setScrollProgress(Math.min(100, Math.max(0, progress)));
-      rafId = null;
-    };
-
-    const handleScroll = () => {
-      if (rafId === null) rafId = requestAnimationFrame(updateScrollProgress);
-    };
-    const handleResize = () => {
-      if (rafId === null) rafId = requestAnimationFrame(updateScrollProgress);
-    };
-
-    updateScrollProgress();
-    window.addEventListener("scroll", handleScroll, { passive: true });
-    window.addEventListener("resize", handleResize, { passive: true });
-
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-      window.removeEventListener("resize", handleResize);
-      if (rafId !== null) cancelAnimationFrame(rafId);
-    };
-  }, [isDetailPage]);
+  if (link === "resume") {
+    return (
+      <li>
+        <a href={RESUME_URL} target="_blank" rel="noopener noreferrer" className={className}>
+          {label}
+        </a>
+      </li>
+    );
+  }
 
   return (
-    <header className={styles.header}>
-      <nav className={styles.nav}>
-        <Link
-          href="/"
-          className={styles.logoLink}
-          aria-label="Navigate home"
-          onClick={() => setIsMenuOpen(false)}
-        >
-          <Image
-            src={withBasePath("/assets/logo.svg")}
-            alt="Yohan Park logo"
-            width={114}
-            height={20}
-            priority
-            className={styles.logo}
-          />
-        </Link>
+    <li>
+      <Link href={`/${link}`} className={className}>
+        {label}
+      </Link>
+    </li>
+  );
+}
 
-        {/* Desktop & Tablet Menu */}
-        <ul className={`${styles.desktopMenu} typo-sub-8 font-600 text-gray-900`}>
-          {NAV_LINKS.filter((link) => link !== "post").map((link) => {
-            if (link === "resume") {
-              return (
-                <li key={link}>
-                  <a
-                    href="https://drive.google.com/file/d/1kUvWxqga7N6lnu7I17FmQMnZOjZmUNRu/view?usp=share_link"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className={styles.navItem}
-                  >
-                    {link.slice(0, 1).toUpperCase() + link.slice(1)}
-                  </a>
-                </li>
-              );
-            }
+function TabIcon({ src }: { src: string }) {
+  const maskValue = `url(${withBasePath(src)})`;
+
+  return (
+    <span
+      className={styles.mobileTabIcon}
+      style={{
+        WebkitMaskImage: maskValue,
+        maskImage: maskValue,
+      }}
+      aria-hidden="true"
+    />
+  );
+}
+
+function BackIcon() {
+  return (
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+      <path
+        d="M15 18l-6-6 6-6"
+        stroke="currentColor"
+        strokeWidth="2"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+    </svg>
+  );
+}
+
+const MOBILE_TABS = [
+  {
+    key: "home",
+    label: "Home",
+    href: "/",
+    iconSrc: "/assets/icons/icon_home.svg",
+    iconSrcActive: "/assets/icons/icon_home_active.svg",
+    external: false,
+    match: (path: string) => path === "/",
+  },
+  {
+    key: "work",
+    label: "Work",
+    href: "/work",
+    iconSrc: "/assets/icons/icon_work.svg",
+    iconSrcActive: "/assets/icons/icon_work_active.svg",
+    external: false,
+    match: (path: string) => path.startsWith("/work"),
+  },
+  {
+    key: "resume",
+    label: "Resume",
+    href: RESUME_URL,
+    iconSrc: "/assets/icons/icon_resume.svg",
+    iconSrcActive: "/assets/icons/icon_resume_active.svg",
+    external: true,
+    match: () => false,
+  },
+  {
+    key: "profile",
+    label: "Profile",
+    href: "/about",
+    iconSrc: "/assets/icons/icon_profile.svg",
+    iconSrcActive: "/assets/icons/icon_profile_active.svg",
+    external: false,
+    match: (path: string) => path.startsWith("/about"),
+  },
+];
+
+export function Navigation() {
+  const visibleLinks = NAV_LINKS.filter((link) => link !== "post");
+  const pathname = usePathname() || "/";
+  const isPostPage = pathname.startsWith("/post/");
+  const [isCompact, setIsCompact] = useState(false);
+
+  useEffect(() => {
+    let lastY = window.scrollY;
+
+    const handleScroll = () => {
+      const currentY = window.scrollY;
+      const delta = currentY - lastY;
+
+      if (Math.abs(delta) < 4) return;
+
+      if (delta > 0 && currentY > 40) {
+        setIsCompact(true);
+      } else if (delta < 0) {
+        setIsCompact(false);
+      }
+
+      lastY = currentY;
+    };
+
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  return (
+    <>
+      <header className={styles.header}>
+        <nav className={styles.nav}>
+          <Link href="/" className={styles.logoLink} aria-label="Navigate home">
+            <Image
+              src={withBasePath("/assets/logo.svg")}
+              alt="Yohan Park logo"
+              width={114}
+              height={20}
+              priority
+              className={styles.logo}
+            />
+          </Link>
+
+          {/* Desktop & Tablet Menu */}
+          <ul className={`${styles.desktopMenu} typo-sub-8 font-600`}>
+            {visibleLinks.map((link) => (
+              <NavLinkItem key={link} link={link} className={styles.navItem} />
+            ))}
+          </ul>
+        </nav>
+      </header>
+
+      {isPostPage && (
+        <div className={styles.mobileBackBar}>
+          <Link href="/" className={styles.mobileBackButton} aria-label="목록으로 돌아가기">
+            <BackIcon />
+          </Link>
+        </div>
+      )}
+
+      {!isPostPage && (
+      <nav
+        className={`${styles.mobileTabBar}${isCompact ? ` ${styles.mobileTabBarCompact}` : ""}`}
+        aria-label="Mobile navigation"
+      >
+        <ul className={styles.mobileTabList}>
+          {MOBILE_TABS.map(({ key, label, href, iconSrc, iconSrcActive, external, match }) => {
+            const isActive = match(pathname);
+            const linkClassName = `${styles.mobileTabLink}${isActive ? ` ${styles.mobileTabLinkActive}` : ""}`;
+
             return (
-              <li key={link}>
-                <Link href={`/${link}`} className={styles.navItem}>
-                  {link.slice(0, 1).toUpperCase() + link.slice(1)}
-                </Link>
+              <li key={key} className={styles.mobileTabListItem}>
+                {external ? (
+                  <a href={href} target="_blank" rel="noopener noreferrer" className={linkClassName}>
+                    <TabIcon src={isActive ? iconSrcActive : iconSrc} />
+                    <span className={styles.mobileTabLabel}>{label}</span>
+                  </a>
+                ) : (
+                  <Link href={href} className={linkClassName} aria-current={isActive ? "page" : undefined}>
+                    <TabIcon src={isActive ? iconSrcActive : iconSrc} />
+                    <span className={styles.mobileTabLabel}>{label}</span>
+                  </Link>
+                )}
               </li>
             );
           })}
         </ul>
-
-        {/* Mobile Hamburger */}
-        <button
-          onClick={() => setIsMenuOpen(!isMenuOpen)}
-          className={styles.mobileButton}
-          aria-label="Toggle menu"
-        >
-          <svg
-            width="32"
-            height="32"
-            viewBox="0 0 32 32"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-            style={{ transition: "all 300ms" }}
-          >
-            {isMenuOpen ? (
-              <path
-                d="M8 8L24 24M24 8L8 24"
-                stroke="currentColor"
-                strokeWidth="2"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-              />
-            ) : (
-              <path
-                d="M6 10H26M6 16H26M6 22H26"
-                stroke="currentColor"
-                strokeWidth="2"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-              />
-            )}
-          </svg>
-        </button>
-
-        {/* Mobile Menu */}
-        <div
-          className={styles.mobileMenu}
-          style={{
-            opacity: isMenuOpen ? 1 : 0,
-            transform: isMenuOpen ? "translateY(0)" : "translateY(-1rem)",
-            visibility: isMenuOpen ? "visible" : "hidden",
-          }}
-        >
-          <ul className={`${styles.mobileMenuList} typo-sub-8 font-600 text-gray-900`}>
-            {NAV_LINKS.filter((link) => link !== "post").map((link, index) => {
-              if (link === "resume") {
-                return (
-                  <li
-                    key={link}
-                    style={{
-                      opacity: isMenuOpen ? 1 : 0,
-                      transition: `opacity 300ms ease-out ${isMenuOpen ? index * 50 : 0}ms`,
-                    }}
-                  >
-                    <a
-                      href="https://drive.google.com/file/d/1kUvWxqga7N6lnu7I17FmQMnZOjZmUNRu/view?usp=share_link"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className={styles.mobileNavItem}
-                      onClick={() => setIsMenuOpen(false)}
-                    >
-                      {link.slice(0, 1).toUpperCase() + link.slice(1)}
-                    </a>
-                  </li>
-                );
-              }
-              return (
-                <li
-                  key={link}
-                  style={{
-                    opacity: isMenuOpen ? 1 : 0,
-                    transition: `opacity 300ms ease-out ${isMenuOpen ? index * 50 : 0}ms`,
-                  }}
-                >
-                  <Link
-                    href={`/${link}`}
-                    className={styles.mobileNavItem}
-                    onClick={() => setIsMenuOpen(false)}
-                  >
-                    {link.slice(0, 1).toUpperCase() + link.slice(1)}
-                  </Link>
-                </li>
-              );
-            })}
-          </ul>
-        </div>
       </nav>
-
-      {!isMenuOpen && (
-        <div className={styles.progressBar}>
-          {isDetailPage ? (
-            <>
-              <div className={styles.progressBarBg} style={{ opacity: isScrolled ? 1 : 0, transition: "opacity 150ms ease" }} />
-              <div
-                className={styles.progressBarFill}
-                style={{
-                  width: `${scrollProgress}%`,
-                  background: "var(--progress-gradient)",
-                }}
-              />
-            </>
-          ) : (
-            <div className={styles.progressBarBg} style={{ opacity: isScrolled ? 1 : 0, transition: "opacity 150ms ease" }} />
-          )}
-        </div>
       )}
-    </header>
+    </>
   );
 }

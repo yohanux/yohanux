@@ -31,6 +31,11 @@
   text-align: left;
 }
 
+.subtitle {
+  font-size: var(--typo-sub-11);
+  line-height: var(--typo-lh-sub-11);
+}
+
 .imageWrapper {
   display: block;
   width: calc(100% + 2.5rem);
@@ -86,6 +91,10 @@
 @media (min-width: 810px) {
   .article      { gap: 4rem; }
   .coverWrapper { height: 420px; }
+  .subtitle {
+    font-size: var(--typo-sub-9);
+    line-height: var(--typo-lh-sub-9);
+  }
 }
 
 @media (min-width: 1200px) {

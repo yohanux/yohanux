@@ -1,15 +1,24 @@
 .header {
-  position: sticky;
+  display: none;
+  position: fixed;
   top: 0;
+  left: 0;
   z-index: 50;
   width: 100%;
-  background-color: var(--white);
+  background: rgba(255, 255, 255, 0.8);
+  backdrop-filter: saturate(180%) blur(20px);
+}
+
+@media (prefers-color-scheme: dark) {
+  .header { background: rgba(0, 0, 0, 0.8); }
 }
 
 .nav {
   display: flex;
   width: 100%;
+  max-width: 80rem;
   height: 60px;
+  margin: 0 auto;
   align-items: center;
   justify-content: space-between;
   padding: 0 1.25rem;
@@ -35,6 +44,7 @@
   align-items: center;
   gap: 0.5rem;
   letter-spacing: 0.025em;
+  color: var(--gray-900);
 }
 
 .navItem {
@@ -44,71 +54,131 @@
 }
 .navItem:hover { opacity: 0.3; }
 
-.mobileButton {
+.mobileTabBar {
+  position: fixed;
+  left: 22px;
+  right: 22px;
+  height: 60px;
+  bottom: calc(env(safe-area-inset-bottom, 0px) + 4px);
+  z-index: 50;
+  background: rgba(255, 255, 255, 0.52);
+  backdrop-filter: saturate(180%) blur(20px);
+  border-radius: 99px;
+  box-shadow: 0 0 0 0.5px rgba(0, 0, 0, 0.1);
+  transform-origin: bottom center;
+  transition: transform 200ms ease;
+}
+
+.mobileTabList {
+  display: flex;
+  align-items: stretch;
+  height: 100%;
+  gap: 0;
+  padding: 4px;
+  color: var(--gray-900);
+}
+
+.mobileTabListItem {
+  flex: 1;
+  min-width: 0;
+}
+
+.mobileTabLink {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2px;
+  width: 100%;
+  height: 100%;
+  padding: 4px;
+  border-radius: 99px;
+  color: var(--gray-900);
+  transition: opacity 300ms, color 200ms, background-color 200ms;
+}
+.mobileTabLink:active { opacity: 0.4; }
+
+.mobileTabIcon {
+  display: block;
+  width: 28px;
+  height: 28px;
+  background-color: currentColor;
+  mask-size: contain;
+  mask-repeat: no-repeat;
+  mask-position: center;
+  -webkit-mask-size: contain;
+  -webkit-mask-repeat: no-repeat;
+  -webkit-mask-position: center;
+  transition: width 200ms ease, height 200ms ease;
+}
+
+.mobileTabLinkActive {
+  color: var(--gray-900);
+  background: var(--grey-opacity-10);
+}
+
+.mobileTabLabel {
+  font-size: 11px;
+  line-height: 1.2;
+  font-weight: 400;
+  white-space: nowrap;
+  opacity: 1;
+  max-height: 15px;
+  overflow: hidden;
+  transition: opacity 200ms ease, max-height 200ms ease;
+}
+
+.mobileTabBarCompact {
+  transform: scale(0.85);
+}
+
+.mobileTabBarCompact .mobileTabIcon {
+  width: 36px;
+  height: 36px;
+}
+
+.mobileTabBarCompact .mobileTabLabel {
+  opacity: 0;
+  max-height: 0;
+}
+
+.mobileBackBar {
+  position: fixed;
+  top: calc(env(safe-area-inset-top, 0px) + 8px);
+  left: 16px;
+  z-index: 50;
+}
+
+.mobileBackButton {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 2rem;
-  height: 2rem;
-}
-
-.mobileMenu {
-  position: absolute;
-  top: 100%;
-  left: 0;
-  width: 100%;
-  background-color: var(--white);
-  border-bottom: 1px solid var(--gray-200);
-  z-index: 50;
-  transition: opacity 300ms ease-in-out, transform 300ms ease-in-out, visibility 300ms ease-in-out;
-}
-
-.mobileMenuList {
-  display: flex;
-  flex-direction: column;
-}
-
-.mobileNavItem {
-  display: block;
-  padding: 1rem 1.5rem;
+  width: 44px;
+  height: 44px;
+  border-radius: 99px;
+  color: var(--gray-900);
+  background: rgba(255, 255, 255, 0.8);
+  backdrop-filter: saturate(180%) blur(20px);
+  box-shadow: 0 0 0 0.5px rgba(0, 0, 0, 0.1);
   transition: opacity 300ms;
 }
-.mobileNavItem:hover { opacity: 0.3; }
 
-.progressBar {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  height: 2px;
-  z-index: 60;
-}
-
-.progressBarBg {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  height: 1px;
-  background-color: var(--gray-200);
+.mobileBackButton:active {
+  opacity: 0.4;
 }
 
 @media (prefers-color-scheme: dark) {
-  .progressBarBg { background-color: var(--gray-100); }
-}
-
-.progressBarFill {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  height: 2px;
+  .mobileBackButton {
+    background: rgba(43, 52, 66, 0.8);
+  }
 }
 
 @media (min-width: 810px) {
+  .header { display: block; }
   .nav { padding-inline: 60px; }
   .desktopMenu { display: flex; }
-  .mobileButton { display: none; }
-  .mobileMenu { display: none !important; }
+  .mobileTabBar { display: none; }
+  .mobileBackBar { display: none; }
 }
 
 @media (min-width: 1200px) {
