@@ -59,8 +59,8 @@ export function Article({ post, index = 0 }: ArticleProps) {
             <div className={styles.scrim} aria-hidden="true" />
             <div className={styles.blur} aria-hidden="true" />
             <div className={styles.overlay}>
-              <h2 className={`${styles.overlayTitle} typo-sub-8 font-600`}>{title}</h2>
-              <p className={`${styles.overlaySubtitle} typo-sub-9 font-500`}>{subtitle}</p>
+              <h2 className={`${styles.overlayTitle} typo-sub-7 font-600`}>{title}</h2>
+              <p className={`${styles.overlaySubtitle} typo-sub-10 font-400`}>{subtitle}</p>
             </div>
           </div>
         )}

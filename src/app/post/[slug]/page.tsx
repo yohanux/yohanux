@@ -86,20 +86,20 @@ export default async function PostDetailPage({ params }: PostPageProps) {
           alt={post.title}
           fill
           className="object-cover"
+          style={{ inset: "-1px" }}
           sizes="(max-width: 768px) 100vw, 768px"
           priority
         />
-      </div>
-
-      <div className={styles.body}>
-        <div className={styles.header}>
-          <h1 className="typo-hero font-600 text-gray-900">
+        <div className={styles.scrim} aria-hidden="true" />
+        <div className={styles.blur} aria-hidden="true" />
+        <div className={styles.coverOverlay}>
+          <h1 className={`${styles.overlayTitle} typo-hero font-600`}>
             {title}
           </h1>
-          <p className={`${styles.subtitle} font-400 text-gray-600`}>
+          <p className={`${styles.overlaySubtitle} ${styles.subtitle} font-400`}>
             {subtitle}
           </p>
-          <p className="typo-sub-10 text-gray-500">
+          <p className={`${styles.overlayDate} typo-sub-10`}>
             {dateObj.toLocaleDateString("ko-KR", {
               year: "numeric",
               month: "long",
@@ -107,7 +107,9 @@ export default async function PostDetailPage({ params }: PostPageProps) {
             })}
           </p>
         </div>
+      </div>
 
+      <div className={styles.body}>
         <div className={styles.prose}>
           <ReactMarkdown
             rehypePlugins={[rehypeRaw]}

@@ -8,6 +8,22 @@ import styles from "./page.module.css";
 
 const GREETING_LINES = ["안녕하세요", "디자이너 박요한 입니다"];
 
+interface ValueCard {
+  emoji: string;
+  title: string;
+}
+
+const SHOW_CARDS = true;
+
+const VALUE_CARDS: ValueCard[] = [
+  { emoji: "💭", title: "INTP" },
+  { emoji: "🎸", title: "일렉기타" },
+  { emoji: "🏃‍♂️", title: "런닝" },
+  { emoji: "🍝", title: "파스타" },
+  { emoji: "☕️", title: "필터커피" },
+  { emoji: "✝️", title: "크리스쳔" },
+];
+
 export default function AboutPage() {
   const [isBodyVisible, setIsBodyVisible] = useState(false);
 
@@ -30,20 +46,26 @@ export default function AboutPage() {
         <p
           className={`${styles.body}${isBodyVisible ? ` ${styles.bodyVisible}` : ""} typo-5 text-gray-800`}
         >
-            디자인 시스템과 개발에 흥미가 있습니다. 복잡한 제품 구조를
-            효율적으로 정리하고 직관적으로 전달하는 과정에서 가치를 느끼고
-            즐깁니다.
-            <br />
-            <br />
-            MBTI는 INTP입니다. 늘 궁금한 것이 많아 주변을 관찰하고 분석합니다.
-            또한 최소한의 물건으로 윤택하게 사는 방법을 고민합니다. 전자제품
-            또는 미니멀 라이프를 주제로 밤새 토론할 수 있습니다. 취미로는
-            일렉기타를 연습하고 있습니다.
-            <br />
-            <br />
-            끝으로, 저는 크리스천입니다.
+          사용자와 조직 모두가 이해하기 쉬운 설계를 지향합니다. 늘 궁금한 것이 많아
+          주변을 관찰하고 분석합니다.
         </p>
       </div>
+      {SHOW_CARDS && (
+        <div className={styles.cardGrid}>
+          {VALUE_CARDS.map((card, index) => (
+            <div
+              key={index}
+              className={`${styles.card}${isBodyVisible ? ` ${styles.cardVisible}` : ""}`}
+              style={{ transitionDelay: `${index * 80}ms` }}
+            >
+              <span className={styles.cardIcon} aria-hidden="true">
+                {card.emoji}
+              </span>
+              <h3 className={`${styles.cardTitle} typo-5 font-600`}>{card.title}</h3>
+            </div>
+          ))}
+        </div>
+      )}
     </main>
   );
 }

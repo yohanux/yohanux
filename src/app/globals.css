@@ -1,7 +1,7 @@
 @import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css");
 
 /* ── Reset ── */
-*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; -webkit-tap-highlight-color: transparent; }
 html { line-height: 1.5; -webkit-text-size-adjust: 100%; tab-size: 4; }
 body { line-height: inherit; }
 h1, h2, h3, h4, h5, h6 { font-size: inherit; font-weight: inherit; }
@@ -95,6 +95,7 @@ input, select, textarea { font: inherit; }
   --purple-900: #65237b;
 
   --grey-opacity-10: rgba(25, 31, 40, 0.1);
+  --grey-opacity-15: rgba(25, 31, 40, 0.15);
   --grey-opacity-50: rgba(0, 23, 51, 0.02);
   --grey-opacity-100: rgba(2, 32, 71, 0.05);
   --grey-opacity-200: rgba(0, 27, 55, 0.1);
@@ -184,6 +185,7 @@ input, select, textarea { font: inherit; }
     --floated-background: #2b3442;
     --grey-background: #2b3442;
     --grey-opacity-200: rgba(255, 255, 255, 0.12);
+    --grey-opacity-15: rgba(255, 255, 255, 0.15);
 
     --gray-900: #EEEEF2;
     --gray-800: #C2C8D0;
@@ -378,10 +380,12 @@ body {
 .translate-y-0  { transform: translateY(0px); }
 .-translate-y-4 { transform: translateY(-1rem); }
 
-/* ── Hover ── */
-.hover\:opacity-30:hover   { opacity: 0.3; }
-.hover\:underline:hover    { text-decoration: underline; }
-.hover\:text-primary:hover { color: var(--primary); }
+/* ── Hover (pointer devices only) ── */
+@media (hover: hover) and (pointer: fine) {
+  .hover\:opacity-30:hover   { opacity: 0.3; }
+  .hover\:underline:hover    { text-decoration: underline; }
+  .hover\:text-primary:hover { color: var(--primary); }
+}
 
 /* ── Prose (markdown content) ── */
 .prose { line-height: 1.75; }

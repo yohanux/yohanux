@@ -92,7 +92,7 @@ const MOBILE_TABS = [
   },
   {
     key: "profile",
-    label: "Profile",
+    label: "About",
     href: "/about",
     iconSrc: "/assets/icons/icon_profile.svg",
     iconSrcActive: "/assets/icons/icon_profile_active.svg",
@@ -101,11 +101,17 @@ const MOBILE_TABS = [
   },
 ];
 
+// TODO: resume 탭 임시로 숨김 처리 — 나중에 다시 노출 예정
+const HIDDEN_TAB_KEYS = ["resume"];
+
 export function Navigation() {
-  const visibleLinks = NAV_LINKS.filter((link) => link !== "post");
+  const visibleLinks = NAV_LINKS.filter((link) => link !== "post" && !HIDDEN_TAB_KEYS.includes(link));
+  const visibleMobileTabs = MOBILE_TABS.filter((tab) => !HIDDEN_TAB_KEYS.includes(tab.key));
   const pathname = usePathname() || "/";
   const isPostPage = pathname.startsWith("/post/");
   const [isCompact, setIsCompact] = useState(false);
+  const activeTabIndex = visibleMobileTabs.findIndex((tab) => tab.match(pathname));
+  const tabCount = visibleMobileTabs.length;
 
   useEffect(() => {
     let lastY = window.scrollY;
@@ -167,7 +173,17 @@ export function Navigation() {
         aria-label="Mobile navigation"
       >
         <ul className={styles.mobileTabList}>
-          {MOBILE_TABS.map(({ key, label, href, iconSrc, iconSrcActive, external, match }) => {
+          {activeTabIndex >= 0 && (
+            <span
+              className={styles.mobileTabHighlight}
+              style={{
+                width: `calc((100% - 8px) / ${tabCount})`,
+                left: `calc(4px + ${activeTabIndex} * (100% - 8px) / ${tabCount})`,
+              }}
+              aria-hidden="true"
+            />
+          )}
+          {visibleMobileTabs.map(({ key, label, href, iconSrc, iconSrcActive, external, match }) => {
             const isActive = match(pathname);
             const linkClassName = `${styles.mobileTabLink}${isActive ? ` ${styles.mobileTabLinkActive}` : ""}`;
 

@@ -27,14 +27,16 @@
   border-radius: 1rem;
   transition: transform 500ms cubic-bezier(0.4, 0, 0.2, 1);
 }
-.article:hover .imageWrapper { transform: scale(0.95); }
-
 .image {
   object-fit: cover;
   border-radius: 1rem;
   transition: transform 500ms cubic-bezier(0.4, 0, 0.2, 1);
 }
-.article:hover .image { transform: scale(1.2); }
+
+@media (hover: hover) and (pointer: fine) {
+  .article:hover .imageWrapper { transform: scale(0.95); }
+  .article:hover .image { transform: scale(1.2); }
+}
 
 .scrim {
   position: absolute;
