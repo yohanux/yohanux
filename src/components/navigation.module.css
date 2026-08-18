@@ -62,7 +62,7 @@
   bottom: calc(env(safe-area-inset-bottom, 0px) + 4px);
   z-index: 50;
   background: rgba(255, 255, 255, 0.52);
-  backdrop-filter: saturate(180%) blur(20px);
+  backdrop-filter: saturate(180%) blur(4px);
   border-radius: 99px;
   box-shadow: 0 0 0 0.5px rgba(0, 0, 0, 0.1);
   transform-origin: bottom center;
@@ -115,6 +115,14 @@
 .mobileTabLinkActive {
   color: var(--gray-900);
   background: var(--grey-opacity-10);
+}
+
+@media (prefers-color-scheme: dark) {
+  .mobileTabBar {
+    background: rgba(0, 0, 0, 0.76);
+    box-shadow: 0 0 0 0.5px rgba(255, 255, 255, 0.1);
+  }
+  .mobileTabLinkActive { background: rgba(255, 255, 255, 0.24); }
 }
 
 .mobileTabLabel {
@@ -170,6 +178,7 @@
 @media (prefers-color-scheme: dark) {
   .mobileBackButton {
     background: rgba(43, 52, 66, 0.8);
+    box-shadow: 0 0 0 0.5px rgba(255, 255, 255, 0.1);
   }
 }
 

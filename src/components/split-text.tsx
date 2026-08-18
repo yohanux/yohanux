@@ -7,6 +7,8 @@ interface SplitTextProps {
   lines: string[];
 }
 
+const CHAR_STAGGER_MS = 30;
+
 export function SplitText({ lines }: SplitTextProps) {
   const [isRevealed, setIsRevealed] = useState(false);
 
@@ -23,7 +25,7 @@ export function SplitText({ lines }: SplitTextProps) {
         <span key={lineIndex} className={styles.splitLine}>
           {lineIndex > 0 && <br />}
           {Array.from(line).map((char, i) => {
-            const delay = charIndex++ * 30;
+            const delay = charIndex++ * CHAR_STAGGER_MS;
             return (
               <span
                 key={i}
