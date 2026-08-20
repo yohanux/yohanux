@@ -199,7 +199,7 @@
   .mobileBackButton { background: rgba(43, 52, 66, 0.8); }
 }
 
-@media (min-width: 810px) {
+@media (min-width: 768px) {
   .header { display: block; }
   .nav { padding-inline: 60px; }
   .desktopMenu { display: flex; }
@@ -207,6 +207,6 @@
   .mobileBackBar { display: none; }
 }
 
-@media (min-width: 1200px) {
+@media (min-width: 1024px) {
   .nav { padding-inline: 5rem; }
 }

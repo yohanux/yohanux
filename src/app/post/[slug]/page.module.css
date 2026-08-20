@@ -125,12 +125,12 @@
   padding-top: 1.5rem;
 }
 
-@media (min-width: 810px) {
+@media (min-width: 768px) {
   .article      { gap: 4rem; }
   .coverWrapper { height: 420px; }
 }
 
-@media (min-width: 1200px) {
+@media (min-width: 1024px) {
   .body { padding: 0; }
   .imageWrapper { width: 100%; margin-left: 0; margin-right: 0; }
   .youtubeWrapper { width: 100%; margin-left: 0; margin-right: 0; }

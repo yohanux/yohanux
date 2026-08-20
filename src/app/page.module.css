@@ -21,7 +21,7 @@
   margin: 0 auto;
 }
 
-@media (min-width: 810px) {
+@media (min-width: 768px) {
   .main { padding-top: 0; padding-inline: 60px; }
   .hero {
     margin-top: 160px;
@@ -29,9 +29,9 @@
     font-size: var(--typo-hero);
     line-height: var(--typo-lh-hero);
   }
-  .grid { grid-template-columns: 1fr 1fr; gap: 2rem 2rem; }
+  .grid { grid-template-columns: 1fr; gap: 2rem 2rem; }
 }
 
-@media (min-width: 1200px) {
+@media (min-width: 1024px) {
   .main { padding-inline: 5rem; }
 }

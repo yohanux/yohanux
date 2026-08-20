@@ -56,25 +56,26 @@ export function Article({ post, index = 0 }: ArticleProps) {
               className={styles.image}
               sizes="(max-width: 768px) 100vw, 768px"
             />
-            <div className={styles.scrim} aria-hidden="true" />
-            <div className={styles.blur} aria-hidden="true" />
-            <div className={styles.overlay}>
-              <h2 className={`${styles.overlayTitle} typo-sub-7 font-600`}>{title}</h2>
-              <p className={`${styles.overlaySubtitle} typo-sub-10 font-400`}>{subtitle}</p>
-            </div>
           </div>
         )}
 
-        <div className="typo-sub-10 font-400 text-gray-500">
-          <span>
-            {(() => {
-              const dateObj = new Date(date);
-              const year = dateObj.getFullYear();
-              const month = String(dateObj.getMonth() + 1).padStart(2, "0");
-              const day = String(dateObj.getDate()).padStart(2, "0");
-              return `${year}. ${month}. ${day}`;
-            })()}
-          </span>
+        <div className={styles.content}>
+          <div className={styles.header}>
+            <h2 className={`${styles.title} typo-sub-7 font-600 text-gray-900`}>{title}</h2>
+            <p className="typo-sub-10 font-400 text-gray-600">{subtitle}</p>
+          </div>
+
+          <div className="typo-sub-10 font-400 text-gray-500">
+            <span>
+              {(() => {
+                const dateObj = new Date(date);
+                const year = dateObj.getFullYear();
+                const month = String(dateObj.getMonth() + 1).padStart(2, "0");
+                const day = String(dateObj.getDate()).padStart(2, "0");
+                return `${year}. ${month}. ${day}`;
+              })()}
+            </span>
+          </div>
         </div>
       </article>
     </Link>

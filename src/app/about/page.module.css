@@ -11,7 +11,7 @@
   padding: 4rem 1.25rem 64px;
 }
 
-@media (min-width: 810px) {
+@media (min-width: 768px) {
   .main {
     padding-top: 0;
     padding-inline: 60px;
@@ -25,7 +25,7 @@
   }
 }
 
-@media (min-width: 1200px) {
+@media (min-width: 1024px) {
   .main {
     padding-inline: 5rem;
   }
