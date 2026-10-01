@@ -1,6 +1,5 @@
 "use client";
 
-import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
@@ -140,14 +139,7 @@ export function Navigation() {
       <header className={styles.header}>
         <nav className={styles.nav}>
           <Link href="/" className={styles.logoLink} aria-label="Navigate home">
-            <Image
-              src={withBasePath("/assets/logo.svg")}
-              alt="Yohan Park logo"
-              width={114}
-              height={20}
-              priority
-              className={styles.logo}
-            />
+            <span className={styles.logo}>YOHANUX</span>
           </Link>
 
           {/* Desktop & Tablet Menu */}

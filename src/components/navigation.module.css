@@ -33,10 +33,12 @@
 
 .logo {
   display: block;
-}
-
-@media (prefers-color-scheme: dark) {
-  .logo { filter: invert(1); }
+  font-family: var(--font-doto);
+  font-size: 1.5rem;
+  font-weight: 900;
+  line-height: 1;
+  letter-spacing: 0.02em;
+  color: var(--gray-900);
 }
 
 .desktopMenu {
@@ -50,6 +52,9 @@
 .navItem {
   display: block;
   padding: 0.75rem 1rem;
+  font-family: var(--font-doto);
+  font-weight: 900;
+  text-transform: uppercase;
   transition: opacity 300ms;
 }
 @media (hover: hover) and (pointer: fine) {
