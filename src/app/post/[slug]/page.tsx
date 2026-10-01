@@ -86,7 +86,6 @@ export default async function PostDetailPage({ params }: PostPageProps) {
           alt={post.title}
           fill
           className="object-cover"
-          style={{ inset: "-1px" }}
           sizes="(max-width: 768px) 100vw, 768px"
           priority
         />
@@ -132,6 +131,9 @@ export default async function PostDetailPage({ params }: PostPageProps) {
               },
               h3: ({ node, ...props }) => (
                 <h3 className="typo-1 font-700 text-gray-900" {...props} />
+              ),
+              h4: ({ node, ...props }) => (
+                <h4 className={`typo-sub-10 font-400 ${styles.caption}`} {...props} />
               ),
               ul: ({ node, ...props }) => (
                 <ul className={`${styles.list} typo-5 text-gray-800`} {...props} />
