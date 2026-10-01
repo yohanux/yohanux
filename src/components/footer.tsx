@@ -36,7 +36,7 @@ export default function Footer() {
       </div>
       <div className={styles.info}>
         <p className="typo-sub-10 text-gray-400">
-          © 2025 YOHANUX. All rights reserved.
+          © 2026 YOHANUX. All rights reserved.
         </p>
         <a
           href="mailto:yohanux@gmail.com"

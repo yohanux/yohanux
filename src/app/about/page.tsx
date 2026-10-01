@@ -13,7 +13,7 @@ interface ValueCard {
   title: string;
 }
 
-const SHOW_CARDS = true;
+const SHOW_CARDS = false;
 
 const VALUE_CARDS: ValueCard[] = [
   { emoji: "💭", title: "INTP" },
