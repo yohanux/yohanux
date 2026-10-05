@@ -54,7 +54,7 @@ export function WorkList({ works }: { works: WorkMeta[] }) {
                   {work.tags.map((tag) => (
                     <li
                       key={tag}
-                      className={`${styles.chip} typo-sub-10 font-500`}
+                      className={`${styles.chip} typo-6 font-500`}
                     >
                       <TagIcon tag={tag} />
                       {tag}
