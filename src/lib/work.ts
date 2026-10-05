@@ -8,7 +8,7 @@ export interface WorkMeta {
   description: string;
   thumbnail: string;
   tags: string[];
-  // external URL; when set, the work opens this link instead of a detail page
+  // external URL the work opens in a new tab
   link: string;
 }
 
@@ -47,9 +47,4 @@ export async function getAllWorks(): Promise<Work[]> {
   return works.sort(
     (a, b) => a.order - b.order || a.slug.localeCompare(b.slug),
   );
-}
-
-export async function getWorkBySlug(slug: string): Promise<Work | null> {
-  const works = await getAllWorks();
-  return works.find((work) => work.slug === slug) ?? null;
 }

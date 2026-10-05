@@ -28,8 +28,9 @@ export function WorkList({ works }: { works: WorkMeta[] }) {
         {works.map((work, index) => (
           <Link
             key={work.slug}
-            href={work.link || `/work/${work.slug}`}
-            {...(work.link && { target: "_blank", rel: "noopener noreferrer" })}
+            href={work.link}
+            target="_blank"
+            rel="noopener noreferrer"
             className={`${styles.item}${isBodyVisible ? ` ${styles.itemVisible}` : ""}`}
             style={{ transitionDelay: `${Math.min(index, 8) * 80}ms` }}
           >
