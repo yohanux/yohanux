@@ -1,0 +1,75 @@
+/* Sprite sheets are horizontal strips of 48px frames: talking = 3, ready = 4.
+   Frame i sits at i / (frames - 1) * 100% when background-size is frames * 100%. */
+.root {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+/* both sheets are stacked; only the active one is visible and animating */
+.sprite {
+  position: absolute;
+  inset: 0;
+  visibility: hidden;
+  background-repeat: no-repeat;
+  image-rendering: pixelated;
+  animation-timing-function: step-end;
+  animation-iteration-count: infinite;
+}
+
+.active {
+  visibility: visible;
+}
+
+/* 3 frames, 100ms each */
+.talking {
+  background-size: 300% 100%;
+}
+
+.talking.active {
+  animation-name: talking;
+  animation-duration: 300ms;
+}
+
+/* 4 frames: 2000 / 100 / 100 / 100ms */
+.ready {
+  background-size: 400% 100%;
+}
+
+.ready.active {
+  animation-name: ready;
+  animation-duration: 2300ms;
+}
+
+@keyframes talking {
+  0% {
+    background-position: 0% 0;
+  }
+  33.333% {
+    background-position: 50% 0;
+  }
+  66.667% {
+    background-position: 100% 0;
+  }
+}
+
+@keyframes ready {
+  0% {
+    background-position: 0% 0;
+  }
+  86.957% {
+    background-position: 33.333% 0;
+  }
+  91.304% {
+    background-position: 66.667% 0;
+  }
+  95.652% {
+    background-position: 100% 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .sprite {
+    animation: none;
+  }
+}

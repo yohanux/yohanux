@@ -1,8 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import Image from "next/image";
-import dotImage from "../../../public/assets/dot.svg";
+import { CharacterSprite } from "@/components/character-sprite";
 import { SplitText } from "@/components/split-text";
 import styles from "./page.module.css";
 
@@ -41,7 +40,7 @@ export default function AboutPage() {
         <div
           className={`${styles.avatar}${isBodyVisible ? ` ${styles.avatarVisible}` : ""}`}
         >
-          <Image src={dotImage} alt="" width={240} height={240} priority />
+          <CharacterSprite />
         </div>
         <p
           className={`${styles.body}${isBodyVisible ? ` ${styles.bodyVisible}` : ""} typo-5 text-gray-800`}
