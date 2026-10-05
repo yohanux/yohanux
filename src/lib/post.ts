@@ -17,7 +17,7 @@ export interface Post extends PostMeta {
 const POST_DIR = path.join(process.cwd(), "src/content/post");
 const HIDDEN_POST_SLUGS = new Set(["designer-gear", "goorm-hackathon", "temp-slug"]);
 
-function parseFrontmatter(raw: string): { metadata: Partial<PostMeta>; content: string } {
+export function parseFrontmatter(raw: string): { metadata: Partial<PostMeta> & Record<string, string | string[]>; content: string } {
   const frontmatterRegex = /^---\n([\s\S]*?)\n---\n?/;
   const match = raw.match(frontmatterRegex);
 
@@ -66,7 +66,7 @@ function parseFrontmatter(raw: string): { metadata: Partial<PostMeta>; content: 
 
   const content = raw.slice(match[0].length).trim();
 
-  return { metadata: metadata as Partial<PostMeta>, content };
+  return { metadata: metadata as Partial<PostMeta> & Record<string, string | string[]>, content };
 }
 
 async function loadPostFromFile(fileName: string): Promise<Post> {
