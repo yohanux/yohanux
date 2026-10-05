@@ -1,8 +1,8 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import Lottie from "lottie-react";
-import yohanAnimation from "../../../public/assets/yohan.json";
+import Image from "next/image";
+import dotImage from "../../../public/assets/dot.svg";
 import { SplitText } from "@/components/split-text";
 import styles from "./page.module.css";
 
@@ -41,7 +41,7 @@ export default function AboutPage() {
         <div
           className={`${styles.avatar}${isBodyVisible ? ` ${styles.avatarVisible}` : ""}`}
         >
-          <Lottie animationData={yohanAnimation} loop={true} />
+          <Image src={dotImage} alt="" width={240} height={240} priority />
         </div>
         <p
           className={`${styles.body}${isBodyVisible ? ` ${styles.bodyVisible}` : ""} typo-5 text-gray-800`}
