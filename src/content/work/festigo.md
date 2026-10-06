@@ -1,6 +1,6 @@
 ---
 slug: festigo
-order: 3
+order: 2
 title: "페스티고"
 description: "페스티벌 플래너"
 thumbnail: "/assets/work/festigo.webp"
