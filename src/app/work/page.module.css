@@ -12,19 +12,28 @@
   margin-bottom: 4rem;
 }
 
-.list {
-  display: flex;
-  flex-direction: column;
-  gap: 2.5rem;
+/* ── Stage: becomes taller than the box on desktop so the box can stay pinned ── */
+.stage {
   width: 100%;
   max-width: 1240px;
   margin: 0 auto;
 }
 
-.item {
+/* extra scroll distance (list overflow) is measured in work-list.tsx */
+.stage {
+  /* sticky can only travel inside its parent's content box, so grow the box itself */
+  min-height: calc(var(--box-h, 0px) + var(--extra, 0px));
+}
+
+/* Stacked layout (mobile / tablet): thumbnail on top, list below. Once the thumbnail
+   is 16px from the top edge the box pins, and page scroll turns into list scroll. */
+.box {
+  position: sticky;
+  top: 16px;
   display: flex;
-  align-items: flex-start;
-  gap: 1.25rem;
+  flex-direction: column;
+  gap: 1rem;
+  max-height: calc(100dvh - 16px);
   opacity: 0;
   transform: translateY(80px);
   transition:
@@ -32,41 +41,126 @@
     transform 0.6s ease-out;
 }
 
-.frame {
-  position: relative;
-  display: block;
-  flex-shrink: 0;
-  width: 64px;
-  aspect-ratio: 1 / 1;
-  overflow: hidden;
-  border-radius: 16px;
-  background-color: var(--gray-100);
-  transition: transform 500ms cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.image {
-  object-fit: cover;
-  transition: transform 500ms cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.content {
-  display: flex;
-  flex-direction: column;
-  gap: 0.5rem;
-}
-
-.itemVisible {
+.boxVisible {
   opacity: 1;
   transform: translateY(0);
 }
 
+/* ── Left: large thumbnail ── */
+.media {
+  position: relative;
+  flex-shrink: 0;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+  border-radius: 24px;
+  background-color: var(--gray-100);
+}
+
+.image {
+  object-fit: cover;
+  opacity: 0;
+  transition: opacity 300ms ease-out;
+}
+
+.imageActive {
+  opacity: 1;
+}
+
+.mediaLink {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+}
+
+/* ── Right: text list ── */
+.listViewport {
+  position: relative;
+  flex: 0 1 auto;
+  min-height: 0;
+  overflow: hidden;
+}
+
+.track {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  /* room so the last row clears the fixed mobile tab bar */
+  padding-bottom: 7rem;
+  will-change: transform;
+}
+
+.row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  width: 100%;
+  padding: 0.75rem 0;
+  color: var(--gray-900);
+  /* unselected works are dimmed as a whole; the text color itself never changes */
+  opacity: 0.35;
+  transition: opacity 200ms ease-out;
+}
+
+.icon {
+  position: relative;
+  flex-shrink: 0;
+  width: 48px;
+  height: 48px;
+  overflow: hidden;
+  border-radius: 12px;
+  background-color: var(--gray-100);
+}
+
+.iconImage {
+  object-fit: cover;
+}
+
+/* icon + name stay on the left, the chips are pushed to the right edge */
+/* icon + name: the click target that selects the work */
+.select {
+  display: flex;
+  flex: 1;
+  align-items: center;
+  gap: 0.875rem;
+  min-width: 0;
+  text-align: left;
+  color: inherit;
+}
+
+.rowActive {
+  opacity: 1;
+}
+
+.text {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  min-width: 0;
+}
+
+.description {
+  color: var(--gray-600);
+  font-size: var(--typo-sub-11);
+  line-height: var(--typo-lh-sub-11);
+  /* one line on mobile, cut with an ellipsis */
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
 .name {
-  transition: color 150ms cubic-bezier(0.4, 0, 0.2, 1);
+  color: inherit;
+  font-size: var(--typo-sub-9);
+  line-height: var(--typo-lh-sub-9);
 }
 
 .chips {
   display: flex;
   flex-wrap: wrap;
+  flex-shrink: 0;
+  justify-content: flex-end;
   gap: 0.375rem;
 }
 
@@ -78,17 +172,21 @@
   border-radius: 999px;
   background-color: var(--gray-100);
   color: var(--gray-800);
+  font-size: var(--typo-7);
+  line-height: var(--typo-lh-7);
 }
 
-@media (hover: hover) and (pointer: fine), (min-width: 768px) {
-  .item:hover .frame {
-    transform: scale(0.95);
+.chipLink {
+  transition: opacity 200ms ease-out;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .chipLink:hover {
+    opacity: 0.6;
   }
-  .item:hover .image {
-    transform: scale(1.2);
-  }
-  .item:hover .name {
-    color: var(--primary);
+
+  .row:not(.rowActive):hover {
+    opacity: 0.6;
   }
 }
 
@@ -97,38 +195,90 @@
     padding-top: 0;
     padding-inline: 60px;
   }
+
   .title {
     margin-top: 160px;
     margin-bottom: 120px;
     font-size: var(--typo-hero);
     line-height: var(--typo-lh-hero);
   }
-  .list {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 2.5rem 2rem;
+
+  .track {
+    gap: 0.25rem;
   }
-  .frame {
-    width: 96px;
-    border-radius: 1.5rem;
+
+  .row {
+    padding: 1rem 0;
   }
-  .item {
-    gap: 2rem;
+
+  .icon {
+    width: 64px;
+    height: 64px;
+    border-radius: 16px;
+  }
+
+  .select {
+    gap: 1.25rem;
+  }
+
+  .name {
+    font-size: var(--typo-sub-7);
+    line-height: var(--typo-lh-sub-7);
+  }
+
+  .description {
+    font-size: var(--typo-sub-10);
+    line-height: var(--typo-lh-sub-10);
+    overflow: visible;
+    text-overflow: clip;
+    white-space: normal;
+  }
+
+  .chip {
+    font-size: var(--typo-6);
+    line-height: var(--typo-lh-6);
+  }
+
+  /* the fixed header is 60px tall; keep the 16px gap below it */
+  .box {
+    top: 76px;
+    max-height: calc(100dvh - 76px);
+  }
+
+  .track {
+    padding-bottom: 2rem;
   }
 }
 
+/* Desktop: thumbnail left, list right; the box pins in the vertical middle. */
 @media (min-width: 1024px) {
   .main {
     padding-inline: 5rem;
   }
-  .list {
-    grid-template-columns: repeat(3, 1fr);
-    gap: 2.5rem 1.5rem;
+
+  .box {
+    top: max(72px, calc(50dvh - var(--box-h, 0px) / 2));
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 5rem;
+    max-height: none;
   }
-  .frame {
-    width: 112px;
+
+  .media {
+    flex: 1 1 0;
+    min-width: 0;
   }
-  .item {
-    gap: 1.25rem;
+
+  /* the list is not tied to the thumbnail's height: it shows as many rows as fit
+     (capped to the viewport) and scrolls the rest */
+  .listViewport {
+    flex: 1 1 0;
+    min-width: 0;
+    max-height: min(1200px, calc(100dvh - 144px));
+  }
+
+  .track {
+    gap: 0;
+    padding-bottom: 0;
   }
 }

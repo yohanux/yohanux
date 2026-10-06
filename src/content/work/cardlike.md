@@ -2,7 +2,7 @@
 slug: cardlike
 order: 1
 title: "카드라이크"
-description: "작업물 설명이 들어갈 자리입니다."
+description: "턴제 RPG 게임"
 thumbnail: "/assets/work/cardlike.webp"
 tags: [앱인토스]
 link: "https://minion.toss.im/LTEXhRI1"

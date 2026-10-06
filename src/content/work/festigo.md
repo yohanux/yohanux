@@ -2,7 +2,7 @@
 slug: festigo
 order: 3
 title: "페스티고"
-description: "작업물 설명이 들어갈 자리입니다."
+description: "페스티벌 플래너"
 thumbnail: "/assets/work/festigo.webp"
 tags: [앱인토스]
 link: "https://minion.toss.im/TlUqIkeu"
