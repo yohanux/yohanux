@@ -6,7 +6,10 @@ export interface WorkMeta {
   slug: string;
   title: string;
   description: string;
+  // small icon shown in the list
   thumbnail: string;
+  // large 16:9 image shown on the left; falls back to the icon when empty
+  cover: string;
   tags: string[];
   // external URL the work opens in a new tab
   link: string;
@@ -29,6 +32,7 @@ async function loadWorkFromFile(fileName: string): Promise<Work> {
     title: (metadata.title as string) ?? slug,
     description: (metadata.description as string) ?? "",
     thumbnail: (metadata.thumbnail as string) ?? "",
+    cover: (metadata.cover as string) ?? "",
     link: (metadata.link as string) ?? "",
     tags: Array.isArray(metadata.tags) ? metadata.tags : [],
     order: Number(metadata.order) || 999,

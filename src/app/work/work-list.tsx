@@ -90,7 +90,7 @@ export function WorkList({ works }: { works: WorkMeta[] }) {
             {works.map((work, index) => (
               <Image
                 key={work.slug}
-                src={withBasePath(work.thumbnail)}
+                src={withBasePath(work.cover || work.thumbnail)}
                 alt={work.title}
                 fill
                 sizes="(min-width: 1024px) 560px, (min-width: 768px) 50vw, 100vw"
@@ -162,6 +162,16 @@ export function WorkList({ works }: { works: WorkMeta[] }) {
                               className={`${chipClassName} ${styles.chipLink}`}
                             >
                               {content}
+                              {/* eslint-disable-next-line @next/next/no-img-element */}
+                              <img
+                                src={withBasePath(
+                                  "/assets/icons/icon-open.svg",
+                                )}
+                                alt=""
+                                width={16}
+                                height={16}
+                                className={styles.openIcon}
+                              />
                             </a>
                           ) : (
                             <span key={tag} className={chipClassName}>

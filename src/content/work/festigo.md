@@ -4,6 +4,7 @@ order: 3
 title: "페스티고"
 description: "페스티벌 플래너"
 thumbnail: "/assets/work/festigo.webp"
+cover: "/assets/work/festigo-cover.webp"
 tags: [앱인토스]
 link: "https://minion.toss.im/TlUqIkeu"
 ---

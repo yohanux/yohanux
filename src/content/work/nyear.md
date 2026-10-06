@@ -2,8 +2,9 @@
 slug: nyear
 order: 3
 title: "오늘의 기념일"
-description: "앱인토스 바이브코딩 챌린지 출품작"
+description: "바이브코딩 챌린지 출품작"
 thumbnail: "/assets/work/nyear.webp"
+cover: "/assets/work/nyear-cover.webp"
 tags: [앱인토스]
 link: "https://minion.toss.im/1CIsTeNb"
 ---

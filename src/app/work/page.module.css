@@ -168,7 +168,7 @@
   display: inline-flex;
   align-items: center;
   gap: 0.25rem;
-  padding: 0.25rem 0.75rem;
+  padding: 8px 0.75rem;
   border-radius: 999px;
   background-color: var(--gray-100);
   color: var(--gray-800);
@@ -177,7 +177,16 @@
 }
 
 .chipLink {
+  /* the open icon carries its own side space, so trim the chip's right padding */
+  padding-right: 0.5rem;
   transition: opacity 200ms ease-out;
+}
+
+.openIcon {
+  flex-shrink: 0;
+  width: 16px;
+  height: 16px;
+  margin-left: -0.125rem;
 }
 
 @media (hover: hover) and (pointer: fine) {

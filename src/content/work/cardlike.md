@@ -4,6 +4,7 @@ order: 1
 title: "카드라이크"
 description: "턴제 RPG 게임"
 thumbnail: "/assets/work/cardlike.webp"
+cover: "/assets/work/cardlike-cover.webp"
 tags: [앱인토스]
 link: "https://minion.toss.im/LTEXhRI1"
 ---
