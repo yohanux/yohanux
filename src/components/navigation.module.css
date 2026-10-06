@@ -76,6 +76,11 @@
   transition: transform 200ms ease;
 }
 
+/* mobile browsers other than Safari: sit 22px above the bottom edge */
+:global(html[data-mobile-non-safari]) .mobileTabBar {
+  bottom: 22px;
+}
+
 .mobileTabList {
   position: relative;
   display: flex;
