@@ -11,6 +11,38 @@ import styles from "./page.module.css";
 
 const TITLE_LINES = ["상상하는 것을", "빠르게 구현합니다"];
 
+// Renders a new-tab link when the work has a URL, otherwise a plain non-clickable block.
+function Wrapper({
+  link,
+  className,
+  style,
+  children,
+}: {
+  link: string;
+  className: string;
+  style: React.CSSProperties;
+  children: React.ReactNode;
+}) {
+  if (!link) {
+    return (
+      <div className={className} style={style}>
+        {children}
+      </div>
+    );
+  }
+  return (
+    <Link
+      href={link}
+      target="_blank"
+      rel="noopener noreferrer"
+      className={className}
+      style={style}
+    >
+      {children}
+    </Link>
+  );
+}
+
 export function WorkList({ works }: { works: WorkMeta[] }) {
   const [isBodyVisible, setIsBodyVisible] = useState(false);
 
@@ -26,11 +58,9 @@ export function WorkList({ works }: { works: WorkMeta[] }) {
       </h1>
       <section className={styles.list}>
         {works.map((work, index) => (
-          <Link
+          <Wrapper
             key={work.slug}
-            href={work.link}
-            target="_blank"
-            rel="noopener noreferrer"
+            link={work.link}
             className={`${styles.item}${isBodyVisible ? ` ${styles.itemVisible}` : ""}`}
             style={{ transitionDelay: `${Math.min(index, 8) * 80}ms` }}
           >
@@ -52,10 +82,7 @@ export function WorkList({ works }: { works: WorkMeta[] }) {
               {work.tags.length > 0 && (
                 <ul className={styles.chips}>
                   {work.tags.map((tag) => (
-                    <li
-                      key={tag}
-                      className={`${styles.chip} typo-6 font-500`}
-                    >
+                    <li key={tag} className={`${styles.chip} typo-6 font-500`}>
                       <TagIcon tag={tag} />
                       {tag}
                     </li>
@@ -63,7 +90,7 @@ export function WorkList({ works }: { works: WorkMeta[] }) {
                 </ul>
               )}
             </span>
-          </Link>
+          </Wrapper>
         ))}
       </section>
     </main>
