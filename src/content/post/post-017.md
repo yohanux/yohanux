@@ -1,7 +1,7 @@
 ---
 slug: digitalminimalism
-title: "디지털 미니멀리즘 구축기"
-description: "경량화된 유튜브와 인스타그램 만들기"
+title: "알고리즘은 빼주세요"
+description: "유튜브와 인스타그램을 가볍게 만들기"
 publishedAt: "2026-11-09"
 coverImage: "/assets/post/digital-minimalism/thumbnail.webp"
 tags: [Design]
@@ -49,7 +49,7 @@ tags: [Design]
 ![이미지 설명](/assets/post/digital-minimalism/digital-minimalism_05.webp)
 </br>
 
-영상 상세화면은 정보를 더욱 최소화시켰다. 이제 더이상 추천 영상과 스폰서 광고가 하단에 뜨지 않는다. 메인 화면으로 나가면 pip모드도 작동한다. 원하면 댓글도 안보이게 할 수 있다. 즉 나에게 필요한 기능과 정보만 골라서 새롭게 구성할 수 있다.
+영상 상세화면은 정보를 더욱 최소화시켰다. 이제 더이상 추천 영상과 스폰서 광고가 하단에 뜨지 않는다. 댓글도 내가 궁금해서 누르기 전까지는 미리보기를 제공하지 않는다. 메인 화면으로 나가면 기존 유튜브처럼 pip모드도 작동한다. 즉 나에게 필요한 기능과 정보만 골라서 새롭게 구성할 수 있다.
 </br></br>
 
 ### 알고리즘을 걷어낸 인스타그램
